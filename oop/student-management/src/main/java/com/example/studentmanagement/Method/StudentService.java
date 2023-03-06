@@ -72,5 +72,25 @@ public class StudentService implements IStudent{
         return new Response(true, res.toString());
     }
 
+    @Override
+    public Object getStudentsFromClass(String classRoom) {
+        List<Student> res = new ArrayList<>();
+        for (Student student : studentList) {
+            if (student.getClassName().equals(classRoom)) res.add(student);
+        }
+        if (res.size() == 0){
+            return new Response(false,"There is no students in "+classRoom);
+        }
+        return new Response(true, res.toString());
+    }
+
+    @Override
+    public Object getStudentFromStudentId(int studentId) {
+        for (Student student : studentList) {
+            if (student.getStudentId()==studentId) return new Response(true, student.toString());
+        }
+        return new Response(false, "Student with id " + studentId + " not found!");
+    }
+
 
 }
