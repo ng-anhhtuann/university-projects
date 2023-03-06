@@ -38,21 +38,18 @@ public class StudentService implements IStudent{
     public Object deleteStudentByStudentId(int studentId) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "There is nothing to delete\nPlease add one more student");
-        boolean isHave = false;
         for ( int i = 0 ; i < n ; i++ ){
             Student currStudent = studentList.get(i);
             if (currStudent.getStudentId() == studentId ){
                 studentList.remove(currStudent);
-                isHave = true;
+                return new Response(true, "Deleted successfully student with id: "+ studentId);
             }
         }
-        return isHave ? new Response(true, "Deleted successfully student with id: "+ studentId)
-            : new Response(false, "There is no student with id: "+studentId);
+        return new Response(false, "There is no student with id: "+studentId);
     }
 
     @Override
     public Object getPrimaryStudents() {
-        int n = studentList.size();
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
             if (student.getIsPrimary()) res.add(student);
@@ -65,56 +62,15 @@ public class StudentService implements IStudent{
 
     @Override
     public Object getStudentsFromFaculty(String faculty) {
-        return null;
+        List<Student> res = new ArrayList<>();
+        for (Student student : studentList) {
+            if (student.getFaculty().equals(faculty)) res.add(student);
+        }
+        if (res.size() == 0){
+            return new Response(false,"There is no students in " + faculty);
+        }
+        return new Response(true, res.toString());
     }
 
-    @Override
-    public Object getStudentsFromClass(String classRoom) {
-        return null;
-    }
 
-    @Override
-    public Object getStudentFromStudentId(int studentId) {
-        return null;
-    }
-
-    @Override
-    public Object getStudentsFromTrainingPointInRange(int start, int end) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentFaculty(int studentId, String faculty) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentClass(int studentId, String classRoom) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentPrimary(int studentId) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentTrainingPoint(int studentId, int trainingPoint) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentAddress(int studentId, String address) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentNumber(int studentId, String number) {
-        return null;
-    }
-
-    @Override
-    public Object updateStudentAccumulateNumber(int studentId, int accumulateNumber) {
-        return null;
-    }
 }
