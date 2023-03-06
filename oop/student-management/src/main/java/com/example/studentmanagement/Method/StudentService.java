@@ -104,5 +104,18 @@ public class StudentService implements IStudent{
         return new Response(true, res.toString());
     }
 
+    @Override
+    public Object updateStudentFaculty(int studentId, String faculty) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setFaculty(faculty);
+                return new Response(true, "Update faculty for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
+
 
 }
