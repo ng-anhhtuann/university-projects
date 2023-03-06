@@ -31,21 +31,36 @@ public class StudentService implements IStudent{
         } else {
             studentList.add(student);
         }
-        return new Response(true, "Add student successfully!");
+        return new Response(true, "Add student successfully!\n" + student);
     }
 
     @Override
     public Object deleteStudentByStudentId(int studentId) {
         int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "There is nothing to delete\nPlease add one more student");
+        boolean isHave = false;
         for ( int i = 0 ; i < n ; i++ ){
-//            if (studentList.get(i))
+            Student currStudent = studentList.get(i);
+            if (currStudent.getStudentId() == studentId ){
+                studentList.remove(currStudent);
+                isHave = true;
+            }
         }
-        return null;
+        return isHave ? new Response(true, "Deleted successfully student with id: "+ studentId)
+            : new Response(false, "There is no student with id: "+studentId);
     }
 
     @Override
     public Object getPrimaryStudents() {
-        return null;
+        int n = studentList.size();
+        List<Student> res = new ArrayList<>();
+        for (Student student : studentList) {
+            if (student.getIsPrimary()) res.add(student);
+        }
+        if (res.size() == 0){
+            return new Response(false,"There is no primary students in this list");
+        }
+        return new Response(true, res.toString());
     }
 
     @Override
