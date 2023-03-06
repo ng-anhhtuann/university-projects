@@ -92,5 +92,17 @@ public class StudentService implements IStudent{
         return new Response(false, "Student with id " + studentId + " not found!");
     }
 
+    @Override
+    public Object getStudentsFromTrainingPointInRange(int start, int end) {
+        List<Student> res = new ArrayList<>();
+        for (Student student : studentList) {
+            if (student.getTrainingPoint() >= start || student.getTrainingPoint() <= end) res.add(student);
+        }
+        if (res.size() == 0){
+            return new Response(false,"There is no students in this range of training point");
+        }
+        return new Response(true, res.toString());
+    }
+
 
 }
