@@ -117,5 +117,81 @@ public class StudentService implements IStudent{
         return new Response(false, "No student with id "+ studentId+ " in list");
     }
 
+    @Override
+    public Object updateStudentClass(int studentId, String classRoom) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setClassName(classRoom);
+                return new Response(true, "Update classroom for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
 
+    @Override
+    public Object updateStudentPrimary(int studentId) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setIsPrimary(true);
+                return new Response(true, "Update primary program for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
+
+    @Override
+    public Object updateStudentTrainingPoint(int studentId, int trainingPoint) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setTrainingPoint(trainingPoint);
+                return new Response(true, "Update training point for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
+
+    @Override
+    public Object updateStudentAddress(int studentId, String address) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setAddress(address);
+                return new Response(true, "Update address for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
+
+    @Override
+    public Object updateStudentNumber(int studentId, String number) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setNumber(number);
+                return new Response(true, "Update number for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
+
+    @Override
+    public Object updateStudentAccumulateNumber(int studentId, int accumulateNumber) {
+        int n = studentList.size();
+        if ( n == 0 ) return new Response(false, "Please add one more student");
+        for (Student currStudent : studentList) {
+            if (currStudent.getStudentId() == studentId) {
+                currStudent.setAccumulateNumber(accumulateNumber);
+                return new Response(true, "Update accumulate number for " + studentId + " successfully");
+            }
+        }
+        return new Response(false, "No student with id "+ studentId+ " in list");
+    }
 }
