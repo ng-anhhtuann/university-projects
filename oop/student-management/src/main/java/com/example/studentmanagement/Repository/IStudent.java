@@ -1,4 +1,4 @@
-package com.example.studentmanagement.Method;
+package com.example.studentmanagement.Repository;
 
 import com.example.studentmanagement.Model.Student;
 
