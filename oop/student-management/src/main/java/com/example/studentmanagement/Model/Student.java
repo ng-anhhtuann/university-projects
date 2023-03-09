@@ -170,7 +170,6 @@ public class Student {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Student.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("MSSV");
         sb.append(':');
         sb.append(((this.studentId == null)?"<null>":this.studentId));
