@@ -13,6 +13,10 @@ public class StudentRepository implements IStudent{
 
     public static List<Student> studentList = new ArrayList<>();
 
+    /**
+     * Singleton design pattern
+     * @return
+     */
     public static StudentRepository getStudentRepository(){
         if (studentRepository == null){
             studentRepository = new StudentRepository();
