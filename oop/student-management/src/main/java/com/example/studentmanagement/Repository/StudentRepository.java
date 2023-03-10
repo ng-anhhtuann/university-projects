@@ -9,13 +9,13 @@ import java.util.Map;
 
 public class StudentRepository implements IStudent{
 
-    public static StudentRepository studentRepository = new StudentRepository();
+    private static StudentRepository studentRepository = new StudentRepository();
 
-    public static List<Student> studentList = new ArrayList<>();
+    private static List<Student> studentList = new ArrayList<>();
 
     /**
      * Singleton design pattern
-     * @return
+     * @return always instance of StudentRepository
      */
     public static StudentRepository getStudentRepository(){
         if (studentRepository == null){
