@@ -1,0 +1,2 @@
+Linear Search answer: 1
+Binary Search answer: 3
