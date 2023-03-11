@@ -53,7 +53,7 @@ void bubbleSort(int a[], int n){
 
 int main(){
     ifstream inp;
-    inp.open("/Users/macad/Documents/University/6th term/Datastructure and Algorithm/Practice/Prob1/input.txt");
+    inp.open("/Users/macad/Documents/Projects/university/dsa/Lab/Prob1/input.txt");
 
     int n;
     inp >> n;
@@ -76,7 +76,7 @@ int main(){
     int binaryAns = binarySearch(a,n,t);
 
     ofstream out;
-    out.open("/Users/macad/Documents/University/6th term/Datastructure and Algorithm/Practice/Prob1/output.txt");
+    out.open("/Users/macad/Documents/Projects/university/dsa/Lab/Prob1/output.txt");
     out << linearString << linearAns << "\n";
     out << binaryString << binaryAns << "\n";
 
