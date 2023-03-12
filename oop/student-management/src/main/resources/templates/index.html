@@ -1,195 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <title>Student Management</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<form>-->
-<!--    <table border="1">-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th>Student ID</th>-->
-<!--            <th>Name</th>-->
-<!--            <th>Faculty</th>-->
-<!--            <th>Class</th>-->
-<!--            <th>Primary</th>-->
-<!--            <th>Training Point</th>-->
-<!--            <th>Accumulate Number</th>-->
-<!--            <th>Citizen ID</th>-->
-<!--            <th>Contact Number</th>-->
-<!--            <th>Date of Birth</th>-->
-<!--            <th>Address</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--        <tr>-->
-<!--            <td>1</td>-->
-<!--            <td>John Smith</td>-->
-<!--            <td>Science</td>-->
-<!--            <td>Class A</td>-->
-<!--            <td>true</td>-->
-<!--            <td>90</td>-->
-<!--            <td>10</td>-->
-<!--            <td>1234567890</td>-->
-<!--            <td>555-1234</td>-->
-<!--            <td>01/01/2000</td>-->
-<!--            <td>123 Main St</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>2</td>-->
-<!--            <td>Jane Doe</td>-->
-<!--            <td>Arts</td>-->
-<!--            <td>Class B</td>-->
-<!--            <td>false</td>-->
-<!--            <td>80</td>-->
-<!--            <td>8</td>-->
-<!--            <td>0987654321</td>-->
-<!--            <td>555-5678</td>-->
-<!--            <td>02/02/2001</td>-->
-<!--            <td>456 Elm St</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>3</td>-->
-<!--            <td>Bob Johnson</td>-->
-<!--            <td>Engineering</td>-->
-<!--            <td>Class C</td>-->
-<!--            <td>true</td>-->
-<!--            <td>85</td>-->
-<!--            <td>12</td>-->
-<!--            <td>1357924680</td>-->
-<!--            <td>555-2468</td>-->
-<!--            <td>03/03/1999</td>-->
-<!--            <td>789 Oak St</td>-->
-<!--        </tr>-->
-<!--        </tbody>-->
-<!--    </table><br><br>-->
-
-<!--    <input type="submit" value="Add-Delete" onclick="toggleButtons(event)" id="add-delete-btn" />-->
-<!--    <div id="add-delete-section" style="display: none;">-->
-<!--        <input type="submit" value="Add Student" onclick="toggleAddStudentInputs(event)" id="add-btn" />-->
-<!--        <input type="submit" value="Delete Student" onclick="toggleDeleteStudent(event)" id="delete-btn" />-->
-<!--    </div>-->
-
-<!--    <div id="add-fields" style="display: none;">-->
-<!--        <label for="studentId">StudentId: </label><input type="number" id="studentId" /><br><br>-->
-<!--        <label for="name">Name: </label><input type="text" id="name" /><br><br>-->
-<!--        <label for="faculty">Faculty: </label><input type="text" id="faculty" /><br><br>-->
-<!--        <label for="className">ClassName: </label><input type="text" id="className" /><br><br>-->
-<!--        <label for="isPrimary">Is Primary? </label><input type="checkbox" id="isPrimary" /><br><br>-->
-<!--        <label for="trainingPoint">Training Point: </label><input type="number" id="trainingPoint" /><br><br>-->
-<!--        <label for="accumulateNumber">Accumulate Number: </label><input type="number" id="accumulateNumber" /><br><br>-->
-<!--        <label for="citizenId">Citizen Id: </label><input type="number" id="citizenId" /><br><br>-->
-<!--        <label for="number">Number: </label><input type="text" id="number" /><br><br>-->
-<!--        <label for="born">Born: </label><input type="text" id="born" /><br><br>-->
-<!--        <label for="address">Address: </label><input type="text" id="address" /><br><br>-->
-<!--        <input type="submit" id="submit-add" value="Add" onclick=""><br><br>-->
-<!--    </div><br><br>-->
-
-<!--    <div id="delete-fields" style="display: none;">-->
-<!--        <label for="studentIdDelete">StudentId: </label>-->
-<!--        <input type="number" id="studentIdDelete" /><br><br>-->
-<!--        <input type="submit" id="submit-delete" value="Delete" onclick=""><br><br>-->
-<!--    </div><br><br>-->
-
-<!--    <label for="show-select-options"></label><select id="show-select-options">-->
-<!--        <option value="show-primary">Show Primary Student</option>-->
-<!--        <option value="show-same-faculty">Show Student In The Same Faculty</option>-->
-<!--        <option value="show-same-class">Show Student In The Same Class</option>-->
-<!--        <option value="show-by-id">Show Student By Id</option>-->
-<!--        <option value="show-in-range">Show Student In Range Of Training Points</option>-->
-<!--    </select>-->
-<!--    <input type="submit" value="Show" onclick="showSelection()"><br><br>-->
-
-<!--    <label for="update-select-options"></label><select id="update-select-options">-->
-<!--        <option value="update-faculty">Update Faculty Of Student</option>-->
-<!--        <option value="update-class">Update Class Of Student</option>-->
-<!--        <option value="update-primary">Update Primary Of CLC Student</option>-->
-<!--        <option value="update-training-points">Update Training Point Of Student</option>-->
-<!--        <option value="update-address">Update Address Of Student</option>-->
-<!--        <option value="update-number">Update Number Of Student</option>-->
-<!--        <option value="update-accumulate-number">Update Accumulate Number Of Student</option>-->
-<!--    </select>-->
-<!--    <input type="submit" value="Update" onclick="updateSelection()">-->
-
-<!--</form>-->
-<!--<script>-->
-<!--    function toggleButtons(event) {-->
-<!--        event.preventDefault();-->
-<!--        var addDeleteSection = document.getElementById("add-delete-section");-->
-<!--        addDeleteSection.style.display = addDeleteSection.style.display === "none" ? "block" : "none";-->
-<!--    }-->
-<!--    function toggleDeleteStudent(event){-->
-<!--        event.preventDefault();-->
-<!--        var inputDelete = document.getElementById("delete-fields");-->
-<!--        inputDelete.style.display = inputDelete.style.display === "none" ? "block" : "none";-->
-<!--    }-->
-<!--    function toggleAddStudentInputs(event) {-->
-<!--        event.preventDefault();-->
-<!--        var inputFields = document.getElementById("add-fields");-->
-<!--        inputFields.style.display = inputFields.style.display === "none" ? "block" : "none";-->
-<!--    }-->
-<!--    function showSelection() {-->
-<!--        var selectEl = document.getElementById("show-select-options");-->
-<!--        var selectedOption = selectEl.options[selectEl.selectedIndex].value;-->
-
-<!--        switch (selectedOption) {-->
-<!--            case "show-primary":-->
-<!--                // show primary student-->
-<!--                break;-->
-<!--            case "show-same-faculty":-->
-<!--                // show students in same faculty-->
-<!--                break;-->
-<!--            case "show-same-class":-->
-<!--                // show students in same class-->
-<!--                break;-->
-<!--            case "show-by-id":-->
-<!--                // show student by ID-->
-<!--                break;-->
-<!--            case "show-in-range":-->
-<!--                // show students in range of training points-->
-<!--                break;-->
-<!--            default:-->
-<!--                // handle error case-->
-<!--                break;-->
-<!--        }-->
-<!--    }-->
-<!--    function updateSelection() {-->
-<!--        var selectEl = document.getElementById("update-select-options");-->
-<!--        var selectedOption = selectEl.options[selectEl.selectedIndex].value;-->
-
-<!--        switch (selectedOption) {-->
-<!--            case "update-faculty":-->
-<!--                // update faculty of student-->
-<!--                break;-->
-<!--            case "update-class":-->
-<!--                // update class of student-->
-<!--                break;-->
-<!--            case "update-primary":-->
-<!--                // update primary of CLC student-->
-<!--                break;-->
-<!--            case "update-training-points":-->
-<!--                // update training points of student-->
-<!--                break;-->
-<!--            case "update-address":-->
-<!--                // update address of student-->
-<!--                break;-->
-<!--            case "update-number":-->
-<!--                // update number of student-->
-<!--                break;-->
-<!--            case "update-accumulate-number":-->
-<!--                // update accumulate number of student-->
-<!--                break;-->
-<!--            default:-->
-<!--                // handle error case-->
-<!--                break;-->
-<!--        }-->
-<!--    }-->
-
-<!--</script>-->
-
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -197,7 +5,7 @@
     <title>Insert Student</title>
 </head>
 <body>
-<table border="1">
+<table border="1" style="margin: auto; margin-top: 20px">
     <thead>
     <tr>
         <th>Student ID</th>
@@ -230,48 +38,49 @@
 
     </tbody>
 </table><br><br>
+<div style="padding-left: 50px; padding-right: 50px">
+    <h1>Insert Student</h1>
 
-<h1>Insert Student</h1>
+    <form id="insert-form">
 
-<form id="insert-form">
+        <label for="student-id">Student ID:</label>
+        <input type="number" name="student-id" id="student-id" required><br>
 
-    <label for="student-id">Student ID:</label>
-    <input type="number" name="student-id" id="student-id" required><br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br>
 
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" required><br>
+        <label for="faculty">Faculty:</label>
+        <input type="text" name="faculty" id="faculty" required><br>
 
-    <label for="faculty">Faculty:</label>
-    <input type="text" name="faculty" id="faculty" required><br>
+        <label for="class">Class:</label>
+        <input type="text" name="class" id="class" value="unknown"><br>
 
-    <label for="class">Class:</label>
-    <input type="text" name="class" id="class" required><br>
+        <label for="is-primary">Is Primary:</label>
+        <input type="checkbox" name="is-primary" id="is-primary" checked><br>
 
-    <label for="is-primary">Is Primary:</label>
-    <input type="checkbox" name="is-primary" id="is-primary"><br>
+        <label for="training-point">Training Point:</label>
+        <input type="number" name="training-point" id="training-point" value=0><br>
 
-    <label for="training-point">Training Point:</label>
-    <input type="number" name="training-point" id="training-point" required><br>
+        <label for="accumulate-number">Accumulate Number:</label>
+        <input type="number" name="accumulate-number" id="accumulate-number" value=0><br>
 
-    <label for="accumulate-number">Accumulate Number:</label>
-    <input type="number" name="accumulate-number" id="accumulate-number" required><br>
+        <label for="citizen-id">Citizen ID:</label>
+        <input type="text" name="citizen-id" id="citizen-id" required><br>
 
-    <label for="citizen-id">Citizen ID:</label>
-    <input type="text" name="citizen-id" id="citizen-id" required><br>
+        <label for="number">Number:</label>
+        <input type="text" name="number" id="number" required><br>
 
-    <label for="number">Number:</label>
-    <input type="text" name="number" id="number" required><br>
+        <label for="born">Born:</label>
+        <input type="date" name="born" id="born" required><br>
 
-    <label for="born">Born:</label>
-    <input type="date" name="born" id="born" required><br>
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address"><br>
 
-    <label for="address">Address:</label>
-    <input type="text" name="address" id="address" required><br>
+        <button type="submit">Submit</button>
+    </form>
 
-    <button type="submit">Submit</button>
-</form>
-
-<div id="response"></div>
+    <div id="response"></div>
+</div>
 
 <script>
     const form = document.getElementById('insert-form');
