@@ -34,6 +34,13 @@ public class StudentRepository implements IStudent{
             student.getCitizenId() == null){
             return new Response(false , "Fill all required cells");
         } else {
+            int id = student.getStudentId();
+            Long citizenID = student.getCitizenId();
+            for ( Student i : studentList){
+                if (i.getStudentId() == id || i.getCitizenId().equals(citizenID)){
+                    return new Response(false, "Duplicate student in id or citizenId");
+                }
+            }
             studentList.add(student);
         }
         return student;
