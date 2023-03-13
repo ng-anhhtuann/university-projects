@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Insert Student</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<table border="1" style="margin: auto; margin-top: 20px">
+<table border="1" style="margin: 20px auto auto;">
     <thead>
     <tr>
         <th>Student ID</th>
@@ -40,45 +41,64 @@
 </table><br><br>
 <div style="padding-left: 50px; padding-right: 50px">
     <h1>Insert Student</h1>
+    <form id="insert-form" style="width: 300px; height: fit-content; position: relative; border: 1px">
+        <div class="margin-bottom-10">
+            <label for="student-id">Student ID:</label>
+            <input type="number" name="student-id" id="student-id" required class="right-pos">
+        </div>
 
-    <form id="insert-form">
+        <div class="margin-bottom-10">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required class="right-pos">
+        </div>
 
-        <label for="student-id">Student ID:</label>
-        <input type="number" name="student-id" id="student-id" required><br>
+        <div class="margin-bottom-10">
+            <label for="faculty">Faculty:</label>
+            <input type="text" name="faculty" id="faculty" required class="right-pos">
+        </div>
 
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required><br>
+        <div class="margin-bottom-10">
+            <label for="class">Class:</label>
+            <input type="text" name="class" id="class" value="unknown" class="right-pos">
+        </div>
 
-        <label for="faculty">Faculty:</label>
-        <input type="text" name="faculty" id="faculty" required><br>
+        <div class="margin-bottom-10">
+            <label for="is-primary">Is Primary:</label>
+            <input type="checkbox" name="is-primary" id="is-primary" checked class="right-pos">
+        </div>
 
-        <label for="class">Class:</label>
-        <input type="text" name="class" id="class" value="unknown"><br>
+        <div class="margin-bottom-10">
+            <label for="training-point">Training Point:</label>
+            <input type="number" name="training-point" id="training-point" value=0 class="right-pos">
+        </div>
 
-        <label for="is-primary">Is Primary:</label>
-        <input type="checkbox" name="is-primary" id="is-primary" checked><br>
+        <div class="margin-bottom-10">
+            <label for="accumulate-number">Accumulate Number:</label>
+            <input type="number" name="accumulate-number" id="accumulate-number" value=0 class="right-pos">
+        </div>
 
-        <label for="training-point">Training Point:</label>
-        <input type="number" name="training-point" id="training-point" value=0><br>
+        <div class="margin-bottom-10">
+            <label for="citizen-id">Citizen ID:</label>
+            <input type="text" name="citizen-id" id="citizen-id" required class="right-pos">
+        </div>
 
-        <label for="accumulate-number">Accumulate Number:</label>
-        <input type="number" name="accumulate-number" id="accumulate-number" value=0><br>
+        <div class="margin-bottom-10">
+            <label for="number">Number:</label>
+            <input type="text" name="number" id="number" required class="right-pos">
+        </div>
 
-        <label for="citizen-id">Citizen ID:</label>
-        <input type="text" name="citizen-id" id="citizen-id" required><br>
+        <div class="margin-bottom-10">
+            <label for="born">Born:</label>
+            <input type="date" name="born" id="born" required class="right-pos">
+        </div>
 
-        <label for="number">Number:</label>
-        <input type="text" name="number" id="number" required><br>
+        <div class="margin-bottom-10">
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" value="HCM city" class="right-pos">
+        </div>
 
-        <label for="born">Born:</label>
-        <input type="date" name="born" id="born" required><br>
-
-        <label for="address">Address:</label>
-        <input type="text" name="address" id="address"><br>
-
-        <button type="submit">Submit</button>
+        <button type="submit" class="submit-button">Submit</button>
     </form>
-
     <div id="response"></div>
 </div>
 
