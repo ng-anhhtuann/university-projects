@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value="/")
 public class StudentService implements IService {
     private final StudentRepository studentRepository = StudentRepository.getStudentRepository();
@@ -49,8 +50,8 @@ public class StudentService implements IService {
 
     @Override
     @GetMapping(value="get-student-id")
-    public Object studentById(@RequestBody Map<String, Integer> reqId){
-        return studentRepository.getStudentFromStudentId(reqId);
+    public Object studentById(@RequestBody Map<String, Integer> req){
+        return studentRepository.getStudentFromStudentId(req);
     }
 
     @Override
@@ -61,43 +62,43 @@ public class StudentService implements IService {
 
     @Override
     @PutMapping(value="update-faculty")
-    public Object updateFaculty(@RequestBody Map<String, Integer> reqId, String faculty){
-        return studentRepository.updateStudentFaculty(reqId,faculty);
+    public Object updateFaculty(@RequestBody Map<String, Integer> req, @RequestBody String faculty){
+        return studentRepository.updateStudentFaculty(req,faculty);
     }
 
     @Override
     @PutMapping(value="update-class")
-    public Object updateClass(@RequestBody Map<String, Integer> reqId, String classRoom){
-        return studentRepository.updateStudentClass(reqId,classRoom);
+    public Object updateClass(@RequestBody Map<String, Integer> req,@RequestBody String classRoom){
+        return studentRepository.updateStudentClass(req,classRoom);
     }
 
     @Override
     @PutMapping(value="update-address")
-    public Object updateAddress(Map<String, Integer> reqId, String address) {
-        return studentRepository.updateStudentAddress(reqId,address);
+    public Object updateAddress(@RequestBody Map<String, Integer> req,@RequestBody String address) {
+        return studentRepository.updateStudentAddress(req,address);
     }
 
     @Override
     @PutMapping(value="update-accumulate")
-    public Object updateAccumulateNumber(Map<String, Integer> reqId, Map<String, Integer> accumulateNumber) {
-        return studentRepository.updateStudentAccumulateNumber(reqId,accumulateNumber);
+    public Object updateAccumulateNumber(@RequestBody Map<String, Integer> req) {
+        return studentRepository.updateStudentAccumulateNumber(req);
     }
 
     @Override
     @PutMapping(value="update-training-point")
-    public Object updateTrainingPoint(Map<String, Integer> reqId, Map<String, Integer> trainingPoint) {
-        return studentRepository.updateStudentTrainingPoint(reqId,trainingPoint);
+    public Object updateTrainingPoint(@RequestBody Map<String, Integer> req) {
+        return studentRepository.updateStudentTrainingPoint(req);
     }
 
     @Override
     @PutMapping(value="update-primary")
-    public Object updatePrimary(Map<String, Integer> reqId) {
-        return studentRepository.updateStudentPrimary(reqId);
+    public Object updatePrimary(@RequestBody Map<String, Integer> req) {
+        return studentRepository.updateStudentPrimary(req);
     }
 
     @Override
     @PutMapping(value="update-number")
-    public Object updateNumber(Map<String, Integer> reqId, String number) {
-        return studentRepository.updateStudentNumber(reqId,number);
+    public Object updateNumber(@RequestBody Map<String, Integer> req,@RequestBody String number) {
+        return studentRepository.updateStudentNumber(req,number);
     }
 }
