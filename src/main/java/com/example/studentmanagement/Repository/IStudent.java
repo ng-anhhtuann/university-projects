@@ -16,8 +16,8 @@ public interface IStudent {
     Object updateStudentFaculty(Map<String, Integer> reqId, String faculty);
     Object updateStudentClass(Map<String, Integer> reqId, String classRoom);
     Object updateStudentPrimary(Map<String, Integer> reqId);
-    Object updateStudentTrainingPoint(Map<String, Integer> reqId, Map<String, Integer> point);
+    Object updateStudentTrainingPoint(Map<String, Integer> reqId);
     Object updateStudentAddress(Map<String, Integer> reqId, String address);
     Object updateStudentNumber(Map<String, Integer> reqId, String number);
-    Object updateStudentAccumulateNumber(Map<String, Integer> reqId, Map<String, Integer> accumulate);
+    Object updateStudentAccumulateNumber(Map<String, Integer> reqId);
 }

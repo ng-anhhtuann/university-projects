@@ -105,8 +105,8 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object getStudentFromStudentId(Map<String, Integer> reqId) {
-        int studentId = reqId.get("studentId");
+    public Object getStudentFromStudentId(Map<String, Integer> req) {
+        int studentId = req.get("studentId");
         for (Student student : studentList) {
             if (student.getStudentId()==studentId) return student;
         }
@@ -126,10 +126,10 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentFaculty(Map<String, Integer> reqId, String faculty) {
+    public Object updateStudentFaculty(Map<String, Integer> req, String faculty) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
+        int studentId = req.get("studentId");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setFaculty(faculty);
@@ -140,10 +140,10 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentClass(Map<String, Integer> reqId, String classRoom) {
+    public Object updateStudentClass(Map<String, Integer> req, String classRoom) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
+        int studentId = req.get("studentId");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setClassName(classRoom);
@@ -154,10 +154,10 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentPrimary(Map<String, Integer> reqId) {
+    public Object updateStudentPrimary(Map<String, Integer> req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
+        int studentId = req.get("studentId");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setIsPrimary(true);
@@ -168,11 +168,11 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentTrainingPoint(Map<String, Integer> reqId, Map<String, Integer> point) {
+    public Object updateStudentTrainingPoint(Map<String, Integer> req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
-        int trainingPoint = reqId.get("trainingPoint");
+        int studentId = req.get("studentId");
+        int trainingPoint = req.get("trainingPoint");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setTrainingPoint(trainingPoint);
@@ -183,10 +183,10 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentAddress(Map<String, Integer> reqId, String address) {
+    public Object updateStudentAddress(Map<String, Integer> req, String address) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
+        int studentId = req.get("studentId");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setAddress(address);
@@ -197,10 +197,10 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentNumber(Map<String, Integer> reqId, String number) {
+    public Object updateStudentNumber(Map<String, Integer> req, String number) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
+        int studentId = req.get("studentId");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setNumber(number);
@@ -211,11 +211,11 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentAccumulateNumber(Map<String, Integer> reqId, Map<String, Integer> accumulate) {
+    public Object updateStudentAccumulateNumber(Map<String, Integer> req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = reqId.get("studentId");
-        int accumulateNumber = accumulate.get("accumulateNumber");
+        int studentId = req.get("studentId");
+        int accumulateNumber = req.get("accumulateNumber");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setAccumulateNumber(accumulateNumber);
