@@ -1,0 +1,114 @@
+.App {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.buttonContainer {
+  flex-direction: row;
+  /* flex: 1 1 auto; */
+}
+.titleWrap {
+  text-align: center;
+}
+.Button {
+  background-color: #11ab1b;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.middlePos {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.inputWidth {
+  width: 310px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 4px;
+  margin-left: 50px;
+}
+.Input {
+  border-radius: 4px;
+}
+.between {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 5px;
+}
+.formWrapper {
+  width: 350px;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+.Submit {
+  background-color: black;
+  border-radius: 8px;
+}
+.ButtonClicked {
+  background-color: #11ab1b70;
+  transition: background-color 0.5s;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.ButtonTitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.student-table {
+  border: 1px solid black;
+  margin: 20px auto;
+  max-height: 100px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
