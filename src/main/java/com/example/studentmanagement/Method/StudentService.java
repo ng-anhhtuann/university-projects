@@ -80,14 +80,14 @@ public class StudentService implements IService {
 
     @Override
     @PutMapping(value="update-accumulate")
-    public Object updateAccumulateNumber(@RequestBody Map<String, Integer> reqId,@RequestBody Map<String, Integer> accumulateNumber) {
-        return studentRepository.updateStudentAccumulateNumber(reqId,accumulateNumber);
+    public Object updateAccumulateNumber(@RequestBody Map<String, Integer> req) {
+        return studentRepository.updateStudentAccumulateNumber(req);
     }
 
     @Override
     @PutMapping(value="update-training-point")
-    public Object updateTrainingPoint(@RequestBody Map<String, Integer> reqId,@RequestBody Map<String, Integer> trainingPoint) {
-        return studentRepository.updateStudentTrainingPoint(reqId,trainingPoint);
+    public Object updateTrainingPoint(@RequestBody Map<String, Integer> req) {
+        return studentRepository.updateStudentTrainingPoint(req);
     }
 
     @Override

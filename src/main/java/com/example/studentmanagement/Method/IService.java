@@ -12,13 +12,13 @@ public interface IService {
     Object primaryStudent();
     Object facultyStudent(@RequestBody String faculty);
     Object classStudent(@RequestBody String classRoom);
-    Object studentById(@RequestBody Map<String, Integer> reqId);
+    Object studentById(@RequestBody Map<String, Integer> req);
     Object studentsLowTrainingPoint();
-    Object updateFaculty(@RequestBody Map<String, Integer> reqId, String faculty);
-    Object updateClass(@RequestBody Map<String, Integer> reqId, String classRoom);
-    Object updateAddress(@RequestBody Map<String, Integer> reqId, String address);
-    Object updateAccumulateNumber(@RequestBody Map<String, Integer> reqId, Map<String, Integer> accumulateNumber);
-    Object updateTrainingPoint(@RequestBody Map<String, Integer> reqId, Map<String, Integer> trainingPoint);
-    Object updatePrimary(@RequestBody Map<String, Integer> reqId);
-    Object updateNumber(@RequestBody Map<String, Integer> reqId, String number);
+    Object updateFaculty(@RequestBody Map<String, Integer> req, String faculty);
+    Object updateClass(@RequestBody Map<String, Integer> req, String classRoom);
+    Object updateAddress(@RequestBody Map<String, Integer> req, String address);
+    Object updateAccumulateNumber(@RequestBody Map<String, Integer> req);
+    Object updateTrainingPoint(@RequestBody Map<String, Integer> req);
+    Object updatePrimary(@RequestBody Map<String, Integer> req);
+    Object updateNumber(@RequestBody Map<String, Integer> req, String number);
 }
