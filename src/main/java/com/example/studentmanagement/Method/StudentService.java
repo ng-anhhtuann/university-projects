@@ -61,43 +61,43 @@ public class StudentService implements IService {
 
     @Override
     @PutMapping(value="update-faculty")
-    public Object updateFaculty(@RequestBody Map<String, Integer> reqId, String faculty){
+    public Object updateFaculty(@RequestBody Map<String, Integer> reqId, @RequestBody String faculty){
         return studentRepository.updateStudentFaculty(reqId,faculty);
     }
 
     @Override
     @PutMapping(value="update-class")
-    public Object updateClass(@RequestBody Map<String, Integer> reqId, String classRoom){
+    public Object updateClass(@RequestBody Map<String, Integer> reqId,@RequestBody String classRoom){
         return studentRepository.updateStudentClass(reqId,classRoom);
     }
 
     @Override
     @PutMapping(value="update-address")
-    public Object updateAddress(Map<String, Integer> reqId, String address) {
+    public Object updateAddress(@RequestBody Map<String, Integer> reqId,@RequestBody String address) {
         return studentRepository.updateStudentAddress(reqId,address);
     }
 
     @Override
     @PutMapping(value="update-accumulate")
-    public Object updateAccumulateNumber(Map<String, Integer> reqId, Map<String, Integer> accumulateNumber) {
+    public Object updateAccumulateNumber(@RequestBody Map<String, Integer> reqId,@RequestBody Map<String, Integer> accumulateNumber) {
         return studentRepository.updateStudentAccumulateNumber(reqId,accumulateNumber);
     }
 
     @Override
     @PutMapping(value="update-training-point")
-    public Object updateTrainingPoint(Map<String, Integer> reqId, Map<String, Integer> trainingPoint) {
+    public Object updateTrainingPoint(@RequestBody Map<String, Integer> reqId,@RequestBody Map<String, Integer> trainingPoint) {
         return studentRepository.updateStudentTrainingPoint(reqId,trainingPoint);
     }
 
     @Override
     @PutMapping(value="update-primary")
-    public Object updatePrimary(Map<String, Integer> reqId) {
+    public Object updatePrimary(@RequestBody Map<String, Integer> reqId) {
         return studentRepository.updateStudentPrimary(reqId);
     }
 
     @Override
     @PutMapping(value="update-number")
-    public Object updateNumber(Map<String, Integer> reqId, String number) {
+    public Object updateNumber(@RequestBody Map<String, Integer> reqId,@RequestBody String number) {
         return studentRepository.updateStudentNumber(reqId,number);
     }
 }
