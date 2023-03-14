@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value="/")
 public class StudentService implements IService {
     private final StudentRepository studentRepository = StudentRepository.getStudentRepository();
