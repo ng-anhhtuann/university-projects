@@ -3,8 +3,10 @@
   padding-right: 10px;
 }
 .buttonContainer {
+  display: flex;
+  justify-content: center;
   flex-direction: row;
-  /* flex: 1 1 auto; */
+  
 }
 .titleWrap {
   text-align: center;
@@ -21,6 +23,11 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
+}
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 .middlePos {
   display: flex;
