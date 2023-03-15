@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Method;
 
+import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Student;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -14,11 +15,11 @@ public interface IService {
     Object classStudent(@RequestBody String classRoom);
     Object studentById(@RequestBody Map<String, Integer> req);
     Object studentsLowTrainingPoint();
-    Object updateFaculty(@RequestBody Map<String, Integer> req, String faculty);
-    Object updateClass(@RequestBody Map<String, Integer> req, String classRoom);
-    Object updateAddress(@RequestBody Map<String, Integer> req, String address);
+    Object updateFaculty(@RequestBody Req req);
+    Object updateClass(@RequestBody Req req);
+    Object updateAddress(@RequestBody Req req);
     Object updateAccumulateNumber(@RequestBody Map<String, Integer> req);
     Object updateTrainingPoint(@RequestBody Map<String, Integer> req);
     Object updatePrimary(@RequestBody Map<String, Integer> req);
-    Object updateNumber(@RequestBody Map<String, Integer> req, String number);
+    Object updateNumber(@RequestBody Req req);
 }
