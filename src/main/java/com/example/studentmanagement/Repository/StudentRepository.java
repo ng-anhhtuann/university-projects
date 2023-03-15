@@ -64,8 +64,6 @@ public class StudentRepository implements IStudent{
 
     @Override
     public Object getAllStudents() {
-        int n = studentList.size();
-        if ( n == 0 ) return new Response(false, "There is no student here");
         return studentList;
     }
 
