@@ -44,7 +44,7 @@ public class StudentRepository implements IStudent{
             }
             studentList.add(student);
         }
-        return student;
+        return new Response(true, "Add successfully");
     }
 
     @Override
@@ -109,7 +109,7 @@ public class StudentRepository implements IStudent{
     public Object getStudentFromStudentId(Map<String, Integer> req) {
         int studentId = req.get("studentId");
         for (Student student : studentList) {
-            if (student.getStudentId()==studentId) return student;
+            if (student.getStudentId() == studentId) return student;
         }
         return new Response(false, "Student with id " + studentId + " not found!");
     }
