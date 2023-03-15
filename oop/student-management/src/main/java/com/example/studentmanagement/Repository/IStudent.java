@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Repository;
 
+import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Student;
 
 import java.util.Map;
@@ -11,13 +12,13 @@ public interface IStudent {
     Object getPrimaryStudents();
     Object getStudentsFromFaculty(String faculty);
     Object getStudentsFromClass(String classRoom);
-    Object getStudentFromStudentId(Map<String, Integer> reqId);
+    Object getStudentFromStudentId(Map<String, Integer> req);
     Object getStudentsLowTrainingPoint();
-    Object updateStudentFaculty(Map<String, Integer> reqId, String faculty);
-    Object updateStudentClass(Map<String, Integer> reqId, String classRoom);
-    Object updateStudentPrimary(Map<String, Integer> reqId);
-    Object updateStudentTrainingPoint(Map<String, Integer> reqId);
-    Object updateStudentAddress(Map<String, Integer> reqId, String address);
-    Object updateStudentNumber(Map<String, Integer> reqId, String number);
-    Object updateStudentAccumulateNumber(Map<String, Integer> reqId);
+    Object updateStudentFaculty(Req req);
+    Object updateStudentClass(Req req);
+    Object updateStudentPrimary(Map<String, Integer> req);
+    Object updateStudentTrainingPoint(Map<String, Integer> req);
+    Object updateStudentAddress(Req req);
+    Object updateStudentNumber(Req req);
+    Object updateStudentAccumulateNumber(Map<String, Integer> req);
 }

@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Repository;
 
+import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Response;
 import com.example.studentmanagement.Model.Student;
 
@@ -108,7 +109,7 @@ public class StudentRepository implements IStudent{
     public Object getStudentFromStudentId(Map<String, Integer> req) {
         int studentId = req.get("studentId");
         for (Student student : studentList) {
-            if (student.getStudentId()==studentId) return student;
+            if (student.getStudentId() == studentId) return student;
         }
         return new Response(false, "Student with id " + studentId + " not found!");
     }
@@ -126,13 +127,13 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentFaculty(Map<String, Integer> req, String faculty) {
+    public Object updateStudentFaculty(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
+        int studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
-                currStudent.setFaculty(faculty);
+                currStudent.setFaculty(req.getNewValue());
                 return new Response(true, "Update faculty for " + studentId + " successfully");
             }
         }
@@ -140,13 +141,13 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentClass(Map<String, Integer> req, String classRoom) {
+    public Object updateStudentClass(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
+        int studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
-                currStudent.setClassName(classRoom);
+                currStudent.setClassName(req.getNewValue());
                 return new Response(true, "Update classroom for " + studentId + " successfully");
             }
         }
@@ -183,13 +184,13 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentAddress(Map<String, Integer> req, String address) {
+    public Object updateStudentAddress(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
+        int studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
-                currStudent.setAddress(address);
+                currStudent.setAddress(req.getNewValue());
                 return new Response(true, "Update address for " + studentId + " successfully");
             }
         }
@@ -197,13 +198,13 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentNumber(Map<String, Integer> req, String number) {
+    public Object updateStudentNumber(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
+        int studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
-                currStudent.setNumber(number);
+                currStudent.setNumber(req.getNewValue());
                 return new Response(true, "Update number for " + studentId + " successfully");
             }
         }

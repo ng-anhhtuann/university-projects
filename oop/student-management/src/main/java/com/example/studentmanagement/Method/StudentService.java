@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Method;
 
+import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Student;
 import com.example.studentmanagement.Repository.StudentRepository;
 import org.springframework.web.bind.annotation.*;
@@ -62,20 +63,20 @@ public class StudentService implements IService {
 
     @Override
     @PutMapping(value="update-faculty")
-    public Object updateFaculty(@RequestBody Map<String, Integer> req, @RequestBody String faculty){
-        return studentRepository.updateStudentFaculty(req,faculty);
+    public Object updateFaculty(@RequestBody Req req){
+        return studentRepository.updateStudentFaculty(req);
     }
 
     @Override
     @PutMapping(value="update-class")
-    public Object updateClass(@RequestBody Map<String, Integer> req,@RequestBody String classRoom){
-        return studentRepository.updateStudentClass(req,classRoom);
+    public Object updateClass(@RequestBody Req req){
+        return studentRepository.updateStudentClass(req);
     }
 
     @Override
     @PutMapping(value="update-address")
-    public Object updateAddress(@RequestBody Map<String, Integer> req,@RequestBody String address) {
-        return studentRepository.updateStudentAddress(req,address);
+    public Object updateAddress(@RequestBody Req req) {
+        return studentRepository.updateStudentAddress(req);
     }
 
     @Override
@@ -98,7 +99,7 @@ public class StudentService implements IService {
 
     @Override
     @PutMapping(value="update-number")
-    public Object updateNumber(@RequestBody Map<String, Integer> req,@RequestBody String number) {
-        return studentRepository.updateStudentNumber(req,number);
+    public Object updateNumber(@RequestBody Req req) {
+        return studentRepository.updateStudentNumber(req);
     }
 }
