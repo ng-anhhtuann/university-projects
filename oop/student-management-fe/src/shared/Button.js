@@ -9,7 +9,7 @@ export default function Button({ title, onClick, color = '#11ab1b', fadeColor = 
     onClick();
     setTimeout(() => {
       setClicked(false);
-    }, 500);
+    }, 300);
   };
 
   const buttonClassName = clicked ? 'ButtonClicked' : 'Button';
