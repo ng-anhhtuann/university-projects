@@ -96,7 +96,7 @@ public class StudentRepository implements IStudent{
 
     @Override
     public Object getStudentFromStudentId(Map<String, Integer> req) {
-        int studentId = req.get("studentId");
+        int studentId = Integer.parseInt(String.valueOf(req.get("studentId")));
         for (Student student : studentList) {
             if (student.getStudentId() == studentId) return student;
         }
