@@ -3,6 +3,7 @@ package com.example.studentmanagement.Repository;
 import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Response;
 import com.example.studentmanagement.Model.Student;
+import com.example.studentmanagement.Model.StudentResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,9 +99,9 @@ public class StudentRepository implements IStudent{
     public Object getStudentFromStudentId(Map<String, Integer> req) {
         int studentId = Integer.parseInt(String.valueOf(req.get("studentId")));
         for (Student student : studentList) {
-            if (student.getStudentId() == studentId) return student;
+            if (student.getStudentId() == studentId) return new StudentResponse(true, student);
         }
-        return new Response(false, "Student with id " + studentId + " not found!");
+        return new StudentResponse(false, new Student());
     }
 
     @Override
