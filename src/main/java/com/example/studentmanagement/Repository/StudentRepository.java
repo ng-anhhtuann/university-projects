@@ -4,6 +4,7 @@ import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Response;
 import com.example.studentmanagement.Model.Student;
 import com.example.studentmanagement.Model.StudentResponse;
+import com.example.studentmanagement.Utils.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,7 @@ public class StudentRepository implements IStudent{
             Student currStudent = studentList.get(i);
             if (currStudent.getStudentId() == studentId ){
                 studentList.remove(currStudent);
+
                 return new Response(true, "Deleted successfully student with id: "+ studentId);
             }
         }
@@ -101,7 +103,7 @@ public class StudentRepository implements IStudent{
         for (Student student : studentList) {
             if (student.getStudentId() == studentId) return new StudentResponse(true, student);
         }
-        return new StudentResponse(false, new Student(-1,"","","",false,-1,-1, (long) -1,"","",""));
+        return new StudentResponse().getStudentResponseByType(Utilities.DEFAULT);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Model;
 
+import com.example.studentmanagement.Utils.Utilities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -16,6 +17,17 @@ public class StudentResponse {
      * No args constructor for use in serialization
      *
      */
+    public StudentResponse getStudentResponseByType(String type) {
+        switch (type) {
+            case Utilities.DEFAULT: {
+                return new StudentResponse(false, new Student(-1,"","","",false,-1,-1, (long) -1,"","",""));
+            }
+            default: {
+                return new StudentResponse();
+            }
+        }
+    }
+
     public StudentResponse() {
     }
 
