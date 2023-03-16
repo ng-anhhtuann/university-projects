@@ -8,11 +8,10 @@ const createStudent = async (student) => {
             body: JSON.stringify(student)
         });
         const data = await response.json();
-        console.log({data})
         if (typeof data.status === 'number') {
             return {status: false, info: "Something's wrong"};
         }
-        return {status: true, info:"Add successfully"};
+        return data;
     } catch (error) {
         console.error(error);
         return {status: false, info:"Something's wrong"};
@@ -28,7 +27,6 @@ const deleteStudent = async (studentId) => {
             body: JSON.stringify(studentId)
         });
         const data = await response.json();
-        console.log({data})
         if (typeof data.status === 'number') {
             return {status: false, info: "Something's wrong"};
         }
@@ -46,16 +44,11 @@ const getAllStudent = async () => {
                 'Content-Type': 'application/json'
             }
         });
-        const data = await response.json();
-        if (typeof data.info !== 'undefined') {
-            return data;
-        }
-        var listStudent = [];
-        listStudent = data;
-        return listStudent;
+        const dataList = await response.json();
+        return dataList;
     } catch (error) {
         console.error(error);
-        return {status: false, info:"Something's wrong"};
+        return []
     }
 }
 const getPrimary = async () => {
@@ -67,74 +60,52 @@ const getPrimary = async () => {
             }
         });
         const data = await response.json();
-        if (typeof data.info !== 'undefined') {
-            return data;
-        }
-        var listStudent = [];
-        listStudent = data;
-        return listStudent;
+        return data;
     } catch (error) {
         console.error(error);
-        return {status: false, info:"Something's wrong"};
+        return []
     }
 }
 const getStudentFromFaculty = async (faculty) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-faculty', {
+        const response = await fetch('https://student-management-server.herokuapp.com/get-faculty?faculty='+faculty, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(faculty)
         });
         const data = await response.json();
-        if (typeof data.info !== 'undefined') {
-            return data;
-        }
-        var listStudent = [];
-        listStudent = data;
-        return listStudent;
+        return data;
     } catch (error) {
         console.error(error);
-        return {status: false, info:"Something's wrong"};
+        return []
     }
 }
 const getStudentFromClass = async (classRoom) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-class', {
+        const response = await fetch('https://student-management-server.herokuapp.com/get-class?classRoom='+classRoom, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(classRoom)
         });
         const data = await response.json();
-        if (typeof data.info !== 'undefined') {
-            return data;
-        }
-        var listStudent = [];
-        listStudent = data;
-        return listStudent;
+        return data;
     } catch (error) {
         console.error(error);
-        return {status: false, info:"Something's wrong"};
+        return [];
     }
 }
 const getStudentFromStudentId = async (studentId) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-student-id', {
+        const response = await fetch('https://student-management-server.herokuapp.com/get-student-id?studentId='+studentId, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentId)
         });
         const data = await response.json();
-        if (typeof data.info !== 'undefined') {
-            return data;
-        }
-        var student = {studentId: data.studentId, name: data.name, faculty: data.faculty, class: data.className, isPrimary: data.isPrimary, trainingPoint: data.trainingPoint, accumulateNumber: data.accumulateNumber, citizenId: data.citizenId, number: data.number, born: data.born, address: data.address};
-        return student;
+        return data
     } catch (error) {
         console.error(error);
         return {status: false, info:"Something's wrong"};
@@ -149,12 +120,7 @@ const getStudentLowTrainingPoint = async () => {
             }
         });
         const data = await response.json();
-        if (typeof data.info !== 'undefined') {
-            return data;
-        }
-        var listStudent = [];
-        listStudent = data;
-        return listStudent;
+        return data
     } catch (error) {
         console.error(error);
         return {status: false, info:"Something's wrong"};
@@ -167,7 +133,7 @@ const updateFaculty = async (studentId, faculty) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentId, faculty)
+            body: JSON.stringify({studentId, newValue: faculty})
         });
         const data = await response.json();
         if (typeof data.status === 'number') {
@@ -186,7 +152,7 @@ const updateClass = async (studentId, classRoom) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentId, classRoom)
+            body: JSON.stringify({studentId, newValue: classRoom})
         });
         const data = await response.json();
         if (typeof data.status === 'number') {
@@ -205,7 +171,7 @@ const updateAddress = async (studentId, address) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentId, address)
+            body: JSON.stringify({studentId, newValue: address})
         });
         const data = await response.json();
         if (typeof data.status === 'number') {
@@ -224,7 +190,7 @@ const updateAccumulate = async (studentId, accumulateNumber) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentId, accumulateNumber)
+            body: JSON.stringify({studentId, accumulateNumber})
         });
         const data = await response.json();
         if (typeof data.status === 'number') {
@@ -246,7 +212,6 @@ const updateTrainingPoint = async (studentId, trainingPoint) => {
             body: JSON.stringify(studentId, trainingPoint)
         });
         const data = await response.json();
-        console.log({data})
         if (typeof data.status === 'number') {
             return {status: false, info: "Something's wrong"};
         }
@@ -277,15 +242,19 @@ const updatePrimary = async (studentId) => {
 }
 const updateNumber = async (studentId, number) => {
     try {
+        const requestBody = {
+            studentId: studentId,
+            newValue: number
+        };
+
         const response = await fetch('https://student-management-server.herokuapp.com/update-number', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ studentId: studentId, number: number })
+            body: JSON.stringify(requestBody)
         });
         const data = await response.json();
-        console.log({data})
         if (typeof data.status === 'number') {
             return {status: false, info: "Something's wrong"};
         }
@@ -295,7 +264,6 @@ const updateNumber = async (studentId, number) => {
         return {status: false, info:"Something's wrong"};
     }
 }
-
 
 export {
     createStudent,
