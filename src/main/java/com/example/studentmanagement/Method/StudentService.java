@@ -39,19 +39,19 @@ public class StudentService implements IService {
 
     @Override
     @GetMapping(value="get-faculty")
-    public Object facultyStudent(@RequestBody String faculty){
+    public Object facultyStudent(@PathVariable String faculty){
         return studentRepository.getStudentsFromFaculty(faculty);
     }
 
     @Override
     @GetMapping(value="get-class")
-    public Object classStudent(@RequestBody String classRoom){
+    public Object classStudent(@PathVariable String classRoom){
         return studentRepository.getStudentsFromClass(classRoom);
     }
 
     @Override
     @GetMapping(value="get-student-id")
-    public Object studentById(@RequestBody Map<String, Integer> req){
+    public Object studentById(@PathVariable Map<String, Integer> req){
         return studentRepository.getStudentFromStudentId(req);
     }
 
