@@ -101,7 +101,7 @@ public class StudentRepository implements IStudent{
         for (Student student : studentList) {
             if (student.getStudentId() == studentId) return new StudentResponse(true, student);
         }
-        return new StudentResponse(false, new Student());
+        return new StudentResponse(false, new Student(-1,"","","",false,-1,-1, (long) -1,"","",""));
     }
 
     @Override
