@@ -3,6 +3,8 @@ package com.example.studentmanagement.Repository;
 import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Response;
 import com.example.studentmanagement.Model.Student;
+import com.example.studentmanagement.Model.StudentResponse;
+import com.example.studentmanagement.Utils.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +46,7 @@ public class StudentRepository implements IStudent{
             }
             studentList.add(student);
         }
-        return student;
+        return new Response(true, "Add successfully");
     }
 
     @Override
@@ -56,6 +58,7 @@ public class StudentRepository implements IStudent{
             Student currStudent = studentList.get(i);
             if (currStudent.getStudentId() == studentId ){
                 studentList.remove(currStudent);
+
                 return new Response(true, "Deleted successfully student with id: "+ studentId);
             }
         }
@@ -64,8 +67,6 @@ public class StudentRepository implements IStudent{
 
     @Override
     public Object getAllStudents() {
-        int n = studentList.size();
-        if ( n == 0 ) return new Response(false, "There is no student here");
         return studentList;
     }
 
@@ -74,9 +75,6 @@ public class StudentRepository implements IStudent{
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
             if (student.getIsPrimary()) res.add(student);
-        }
-        if (res.size() == 0){
-            return new Response(false,"There is no primary students in this list");
         }
         return res;
     }
@@ -87,9 +85,6 @@ public class StudentRepository implements IStudent{
         for (Student student : studentList) {
             if (student.getFaculty().equals(faculty)) res.add(student);
         }
-        if (res.size() == 0){
-            return new Response(false,"There is no students in " + faculty);
-        }
         return res;
     }
 
@@ -99,19 +94,16 @@ public class StudentRepository implements IStudent{
         for (Student student : studentList) {
             if (student.getClassName().equals(classRoom)) res.add(student);
         }
-        if (res.size() == 0){
-            return new Response(false,"There is no students in "+classRoom);
-        }
         return res;
     }
 
     @Override
     public Object getStudentFromStudentId(Map<String, Integer> req) {
-        int studentId = req.get("studentId");
+        int studentId = Integer.parseInt(String.valueOf(req.get("studentId")));
         for (Student student : studentList) {
-            if (student.getStudentId() == studentId) return student;
+            if (student.getStudentId() == studentId) return new StudentResponse(true, student);
         }
-        return new Response(false, "Student with id " + studentId + " not found!");
+        return new StudentResponse().getStudentResponseByType(Utilities.DEFAULT);
     }
 
     @Override
@@ -119,9 +111,6 @@ public class StudentRepository implements IStudent{
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
             if (student.getTrainingPoint() >= 0 || student.getTrainingPoint() <= 50) res.add(student);
-        }
-        if (res.size() == 0){
-            return new Response(false,"There is no students in this range of training point");
         }
         return res;
     }
