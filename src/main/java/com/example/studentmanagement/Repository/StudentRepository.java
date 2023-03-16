@@ -73,9 +73,6 @@ public class StudentRepository implements IStudent{
         for (Student student : studentList) {
             if (student.getIsPrimary()) res.add(student);
         }
-        if (res.size() == 0){
-            return new Response(false,"There is no primary students in this list");
-        }
         return res;
     }
 
@@ -85,9 +82,6 @@ public class StudentRepository implements IStudent{
         for (Student student : studentList) {
             if (student.getFaculty().equals(faculty)) res.add(student);
         }
-        if (res.size() == 0){
-            return new Response(false,"There is no students in " + faculty);
-        }
         return res;
     }
 
@@ -96,9 +90,6 @@ public class StudentRepository implements IStudent{
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
             if (student.getClassName().equals(classRoom)) res.add(student);
-        }
-        if (res.size() == 0){
-            return new Response(false,"There is no students in "+classRoom);
         }
         return res;
     }
@@ -117,9 +108,6 @@ public class StudentRepository implements IStudent{
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
             if (student.getTrainingPoint() >= 0 || student.getTrainingPoint() <= 50) res.add(student);
-        }
-        if (res.size() == 0){
-            return new Response(false,"There is no students in this range of training point");
         }
         return res;
     }
