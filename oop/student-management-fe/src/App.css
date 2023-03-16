@@ -2,11 +2,18 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+.formContainer {
+  width: 310px;
+  height: fit-content;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  margin-left: 10px;
+}
 .buttonContainer {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  flex-direction: row;
-  
 }
 .titleWrap {
   text-align: center;
@@ -18,14 +25,20 @@
   padding: 4px 8px;
   text-align: center;
   text-decoration: none;
+  height: 26px;
   display: inline-block;
   font-size: 2px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
 }
+.inLine {
+  display: flex;
+  flex-direction: row;
+}
 .mapContainer {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 10px;
 }
@@ -39,7 +52,7 @@
   border: 1px solid black;
   padding: 5px;
   border-radius: 4px;
-  margin-left: 50px;
+  margin-left: 10px;
 }
 .Input {
   border-radius: 4px;
@@ -60,10 +73,11 @@
 }
 .ButtonClicked {
   background-color: #11ab1b70;
-  transition: background-color 0.5s;
+  transition: background-color 0.3s;
   border: none;
   color: white;
   padding: 4px 8px;
+  height: 26px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
