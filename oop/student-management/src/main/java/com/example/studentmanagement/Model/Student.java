@@ -11,7 +11,7 @@ public class Student {
 
     @SerializedName("studentId")
     @Expose
-    private Integer studentId;
+    private Long studentId;
     @SerializedName("name")
     @Expose
     private String name;
@@ -64,7 +64,7 @@ public class Student {
      * @param faculty
      * @param accumulateNumber
      */
-    public Student(Integer studentId, String name, String faculty, String className, Boolean isPrimary, Integer trainingPoint, Integer accumulateNumber, Long citizenId, String number, String born, String address) {
+    public Student(Long studentId, String name, String faculty, String className, Boolean isPrimary, Integer trainingPoint, Integer accumulateNumber, Long citizenId, String number, String born, String address) {
         super();
         this.studentId = studentId;
         this.name = name;
@@ -79,11 +79,11 @@ public class Student {
         this.address = address;
     }
 
-    public Integer getStudentId() {
+    public Long getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Integer studentId) {
+    public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
 
