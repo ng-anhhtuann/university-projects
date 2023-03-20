@@ -21,12 +21,7 @@ void QuickSort(int a[], int l, int r)
 { 	
 	int	i, j;
 	if (l >= r)	return;
-  	double x = (a[l] + a[r])/2; 
-    /* another approach:
-    x = a((l+r)/2) 
-    x = a[l]
-    x = a[r]
-    */
+  	double x = a[(l+r)/2]; 
   	i = l; j = r;
   	 do{
      	while(a[i] < x) i++;
@@ -69,8 +64,8 @@ int main() {
     cout << "Array A before sort\n";
     log(a,n);
     cout << "Array A after sort: \n";
-    // QuickSort(a,0,n-1);
-    heap(a, n);
+    QuickSort(a,0,n-1);
+    // heap(a, n);
     log(a,n);
 
     // cout << "Array B before sort\n";

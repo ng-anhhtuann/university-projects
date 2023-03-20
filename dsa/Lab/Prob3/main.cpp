@@ -191,7 +191,7 @@ int main() {
 
     cout << "Original Linked List: ";
     printList(head);
-    quickSort(&head, getLastNode(head));
+    interchangeSort(head);
 
     cout << "Sorted Linked List: ";
     printList(head);
