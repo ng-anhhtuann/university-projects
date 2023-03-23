@@ -1,9 +1,6 @@
 package com.example.studentmanagement.Repository;
 
-import com.example.studentmanagement.Model.Req;
-import com.example.studentmanagement.Model.Response;
-import com.example.studentmanagement.Model.Student;
-import com.example.studentmanagement.Model.StudentResponse;
+import com.example.studentmanagement.Model.*;
 import com.example.studentmanagement.Utils.Utilities;
 
 import java.util.ArrayList;
@@ -53,7 +50,7 @@ public class StudentRepository implements IStudent{
     public Object deleteStudentByStudentId(Map<String, Integer> req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "There is nothing to delete");
-        int studentId = req.get("studentId");
+        long studentId = req.get("studentId");
         for ( int i = 0 ; i < n ; i++ ){
             Student currStudent = studentList.get(i);
             if (currStudent.getStudentId() == studentId ){
@@ -81,7 +78,7 @@ public class StudentRepository implements IStudent{
 
     @Override
     public Object getStudentFromStudentId(Map<String, Integer> req) {
-        int studentId = Integer.parseInt(String.valueOf(req.get("studentId")));
+        long studentId = Integer.parseInt(String.valueOf(req.get("studentId")));
         for (Student student : studentList) {
             if (student.getStudentId() == studentId) return new StudentResponse(true, student);
         }
@@ -101,7 +98,7 @@ public class StudentRepository implements IStudent{
     public Object updateStudentClass(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.getStudentId();
+        long studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setClassName(req.getNewValue());
@@ -112,11 +109,11 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentPoint(Map<String, Integer> req) {
+    public Object updateStudentPoint(DoubleReq req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
-        double avgPoint = req.get("avgPoint");
+        long studentId = req.getStudentId();
+        double avgPoint = req.getAvgPoint();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setAvgPoint(avgPoint);
@@ -130,7 +127,7 @@ public class StudentRepository implements IStudent{
     public Object updateStudentAddress(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.getStudentId();
+        long studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setAddress(req.getNewValue());
@@ -144,7 +141,7 @@ public class StudentRepository implements IStudent{
     public Object updateStudentNumber(Req req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.getStudentId();
+        long studentId = req.getStudentId();
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setNumber(req.getNewValue());

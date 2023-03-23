@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Method;
 
+import com.example.studentmanagement.Model.DoubleReq;
 import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Student;
 import com.example.studentmanagement.Repository.IStudent;
@@ -64,7 +65,7 @@ public class StudentService implements IStudent {
 
     @Override
     @PutMapping(value="update-point")
-    public Object updateStudentPoint(@RequestBody Map<String, Integer> req) {
+    public Object updateStudentPoint(@RequestBody DoubleReq req) {
         return studentRepository.updateStudentPoint(req);
     }
 

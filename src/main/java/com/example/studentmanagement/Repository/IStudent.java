@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Repository;
 
+import com.example.studentmanagement.Model.DoubleReq;
 import com.example.studentmanagement.Model.Req;
 import com.example.studentmanagement.Model.Student;
 
@@ -13,7 +14,7 @@ public interface IStudent {
     Object getStudentFromStudentId(Map<String, Integer> req);
     Object getStudentsLowPoint();
     Object updateStudentClass(Req req);
-    Object updateStudentPoint(Map<String, Integer> req);
+    Object updateStudentPoint(DoubleReq req);
     Object updateStudentAddress(Req req);
     Object updateStudentNumber(Req req);
 }
