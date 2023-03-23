@@ -9,25 +9,15 @@ import com.google.gson.annotations.SerializedName;
  * Inheritance from Person
  */
 public class Student extends Person {
-
     @SerializedName("studentId")
     @Expose
     private Long studentId;
-    @SerializedName("faculty")
+    @SerializedName("avgPoint")
     @Expose
-    private String faculty;
+    private Double avgPoint;
     @SerializedName("className")
     @Expose
     private String className;
-    @SerializedName("isPrimary")
-    @Expose
-    private Boolean isPrimary;
-    @SerializedName("trainingPoint")
-    @Expose
-    private Integer trainingPoint;
-    @SerializedName("accumulateNumber")
-    @Expose
-    private Integer accumulateNumber;
     @SerializedName("born")
     @Expose
     private String born;
@@ -47,23 +37,16 @@ public class Student extends Person {
      * @param studentId
      * @param number
      * @param address
-     * @param isPrimary
-     * @param trainingPoint
      * @param born
      * @param name
      * @param className
      * @param citizenId
-     * @param faculty
-     * @param accumulateNumber
      */
-    public Student(Long studentId, String name, String faculty, String className, Boolean isPrimary, Integer trainingPoint, Integer accumulateNumber, Long citizenId, String number, String born, String address) {
+    public Student(Long studentId, String name, String className, Long citizenId, Double avgPoint, String number, String born, String address) {
         super(name, number, citizenId);
         this.studentId = studentId;
-        this.faculty = faculty;
         this.className = className;
-        this.isPrimary = isPrimary;
-        this.trainingPoint = trainingPoint;
-        this.accumulateNumber = accumulateNumber;
+        this.avgPoint = avgPoint;
         this.born = born;
         this.address = address;
     }
@@ -76,14 +59,6 @@ public class Student extends Person {
         this.studentId = studentId;
     }
 
-    public String getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
-    }
-
     public String getClassName() {
         return className;
     }
@@ -92,28 +67,12 @@ public class Student extends Person {
         this.className = className;
     }
 
-    public Boolean getIsPrimary() {
-        return isPrimary;
+    public Double getAvgPoint() {
+        return avgPoint;
     }
 
-    public void setIsPrimary(Boolean isPrimary) {
-        this.isPrimary = isPrimary;
-    }
-
-    public Integer getTrainingPoint() {
-        return trainingPoint;
-    }
-
-    public void setTrainingPoint(Integer trainingPoint) {
-        this.trainingPoint = trainingPoint;
-    }
-
-    public Integer getAccumulateNumber() {
-        return accumulateNumber;
-    }
-
-    public void setAccumulateNumber(Integer accumulateNumber) {
-        this.accumulateNumber = accumulateNumber;
+    public void setAvgPoint(Double avgPoint) {
+        this.avgPoint = avgPoint;
     }
 
     public String getBorn() {
@@ -135,29 +94,29 @@ public class Student extends Person {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("MSSV");
+        sb.append("MSHS");
         sb.append(':');
         sb.append(((this.studentId == null)?"<null>":this.studentId));
         sb.append(',');
-        sb.append("Nganh");
+        sb.append("Ho Ten");
         sb.append(':');
-        sb.append(((this.faculty == null)?"<null>":this.faculty));
+        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(',');
+        sb.append("Diem trung binh");
+        sb.append(':');
+        sb.append(((this.avgPoint == null)?"<null>":this.avgPoint));
+        sb.append(',');
+        sb.append("Sdt");
+        sb.append(':');
+        sb.append(((this.number == null)?"<null>":this.number));
+        sb.append(',');
+        sb.append("CCCD");
+        sb.append(':');
+        sb.append(((this.citizenId == null)?"<null>":this.citizenId));
         sb.append(',');
         sb.append("Ten lop");
         sb.append(':');
         sb.append(((this.className == null)?"<null>":this.className));
-        sb.append(',');
-        sb.append("Dao tao");
-        sb.append(':');
-        sb.append(((this.isPrimary)?"Chinh quy":"Chat luong cao"));
-        sb.append(',');
-        sb.append("Diem ren luyen");
-        sb.append(':');
-        sb.append(((this.trainingPoint == null)?"<null>":this.trainingPoint));
-        sb.append(',');
-        sb.append("Tin chi tich luy");
-        sb.append(':');
-        sb.append(((this.accumulateNumber == null)?"<null>":this.accumulateNumber));
         sb.append(',');
         sb.append("Ngay sinh");
         sb.append(':');

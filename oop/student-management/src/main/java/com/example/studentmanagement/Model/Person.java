@@ -10,13 +10,13 @@ import com.google.gson.annotations.SerializedName;
 public abstract class Person {
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("number")
     @Expose
-    private String number;
+    public String number;
     @SerializedName("citizenId")
     @Expose
-    private Long citizenId;
+    public Long citizenId;
 
     /**
      * No args constructor for use in serialization
