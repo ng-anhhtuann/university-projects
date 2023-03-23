@@ -164,11 +164,11 @@ int main() {
     addTail(&head, 5); 
     addTail(&head, 15); 
     addTail(&head, 18); 
-    addTail(&head, 45); 
-    addTail(&head, 2);
-    addTail(&head, 18); 
-    addTail(&head, 45); 
-    addTail(&head, 2);
+    addTail(&head, 43); 
+    addTail(&head, 28);
+    addTail(&head, 90); 
+    addTail(&head, 35); 
+    addTail(&head, 1);
     int n = count(&head);
 
     cout << "Danh sach lien ket truoc khi sap xep: \n";
