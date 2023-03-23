@@ -63,7 +63,7 @@ public class StudentService implements IStudent {
     }
 
     @Override
-    @PutMapping(value="update-training-point")
+    @PutMapping(value="update-point")
     public Object updateStudentPoint(@RequestBody Map<String, Integer> req) {
         return studentRepository.updateStudentPoint(req);
     }
