@@ -6,15 +6,13 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Encapsulation with datafields and getters/setters
  * Polymorphism with initialize objects by constructor
+ * Inheritance from Person
  */
-public class Student {
+public class Student extends Person {
 
     @SerializedName("studentId")
     @Expose
     private Long studentId;
-    @SerializedName("name")
-    @Expose
-    private String name;
     @SerializedName("faculty")
     @Expose
     private String faculty;
@@ -30,12 +28,6 @@ public class Student {
     @SerializedName("accumulateNumber")
     @Expose
     private Integer accumulateNumber;
-    @SerializedName("citizenId")
-    @Expose
-    private Long citizenId;
-    @SerializedName("number")
-    @Expose
-    private String number;
     @SerializedName("born")
     @Expose
     private String born;
@@ -65,16 +57,13 @@ public class Student {
      * @param accumulateNumber
      */
     public Student(Long studentId, String name, String faculty, String className, Boolean isPrimary, Integer trainingPoint, Integer accumulateNumber, Long citizenId, String number, String born, String address) {
-        super();
+        super(name, number, citizenId);
         this.studentId = studentId;
-        this.name = name;
         this.faculty = faculty;
         this.className = className;
         this.isPrimary = isPrimary;
         this.trainingPoint = trainingPoint;
         this.accumulateNumber = accumulateNumber;
-        this.citizenId = citizenId;
-        this.number = number;
         this.born = born;
         this.address = address;
     }
@@ -85,14 +74,6 @@ public class Student {
 
     public void setStudentId(Long studentId) {
         this.studentId = studentId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getFaculty() {
@@ -135,22 +116,6 @@ public class Student {
         this.accumulateNumber = accumulateNumber;
     }
 
-    public Long getCitizenId() {
-        return citizenId;
-    }
-
-    public void setCitizenId(Long citizenId) {
-        this.citizenId = citizenId;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
     public String getBorn() {
         return born;
     }
@@ -174,10 +139,6 @@ public class Student {
         sb.append(':');
         sb.append(((this.studentId == null)?"<null>":this.studentId));
         sb.append(',');
-        sb.append("Ho Ten");
-        sb.append(':');
-        sb.append(((this.name == null)?"<null>":this.name));
-        sb.append(',');
         sb.append("Nganh");
         sb.append(':');
         sb.append(((this.faculty == null)?"<null>":this.faculty));
@@ -197,14 +158,6 @@ public class Student {
         sb.append("Tin chi tich luy");
         sb.append(':');
         sb.append(((this.accumulateNumber == null)?"<null>":this.accumulateNumber));
-        sb.append(',');
-        sb.append("CCCD");
-        sb.append(':');
-        sb.append(((this.citizenId == null)?"<null>":this.citizenId));
-        sb.append(',');
-        sb.append("So dien thoai");
-        sb.append(':');
-        sb.append(((this.number == null)?"<null>":this.number));
         sb.append(',');
         sb.append("Ngay sinh");
         sb.append(':');
