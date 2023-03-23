@@ -71,24 +71,6 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object getPrimaryStudents() {
-        List<Student> res = new ArrayList<>();
-        for (Student student : studentList) {
-            if (student.getIsPrimary()) res.add(student);
-        }
-        return res;
-    }
-
-    @Override
-    public Object getStudentsFromFaculty(String faculty) {
-        List<Student> res = new ArrayList<>();
-        for (Student student : studentList) {
-            if (student.getFaculty().equals(faculty)) res.add(student);
-        }
-        return res;
-    }
-
-    @Override
     public Object getStudentsFromClass(String classRoom) {
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
@@ -107,26 +89,12 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object getStudentsLowTrainingPoint() {
+    public Object getStudentsLowPoint() {
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
-            if (student.getTrainingPoint() >= 0 || student.getTrainingPoint() <= 50) res.add(student);
+            if (student.getAvgPoint() >= 0 || student.getAvgPoint() <= 5.0) res.add(student);
         }
         return res;
-    }
-
-    @Override
-    public Object updateStudentFaculty(Req req) {
-        int n = studentList.size();
-        if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.getStudentId();
-        for (Student currStudent : studentList) {
-            if (currStudent.getStudentId() == studentId) {
-                currStudent.setFaculty(req.getNewValue());
-                return new Response(true, "Update faculty for " + studentId + " successfully");
-            }
-        }
-        return new Response(false, "No student with id "+ studentId+ " in list");
     }
 
     @Override
@@ -144,29 +112,15 @@ public class StudentRepository implements IStudent{
     }
 
     @Override
-    public Object updateStudentPrimary(Map<String, Integer> req) {
+    public Object updateStudentPoint(Map<String, Integer> req) {
         int n = studentList.size();
         if ( n == 0 ) return new Response(false, "Please add one more student");
         int studentId = req.get("studentId");
+        double avgPoint = req.get("avgPoint");
         for (Student currStudent : studentList) {
             if (currStudent.getStudentId() == studentId) {
-                currStudent.setIsPrimary(true);
-                return new Response(true, "Update primary program for " + studentId + " successfully");
-            }
-        }
-        return new Response(false, "No student with id "+ studentId+ " in list");
-    }
-
-    @Override
-    public Object updateStudentTrainingPoint(Map<String, Integer> req) {
-        int n = studentList.size();
-        if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
-        int trainingPoint = req.get("trainingPoint");
-        for (Student currStudent : studentList) {
-            if (currStudent.getStudentId() == studentId) {
-                currStudent.setTrainingPoint(trainingPoint);
-                return new Response(true, "Update training point for " + studentId + " successfully");
+                currStudent.setAvgPoint(avgPoint);
+                return new Response(true, "Update average point for " + studentId + " successfully");
             }
         }
         return new Response(false, "No student with id "+ studentId+ " in list");
@@ -195,21 +149,6 @@ public class StudentRepository implements IStudent{
             if (currStudent.getStudentId() == studentId) {
                 currStudent.setNumber(req.getNewValue());
                 return new Response(true, "Update number for " + studentId + " successfully");
-            }
-        }
-        return new Response(false, "No student with id "+ studentId+ " in list");
-    }
-
-    @Override
-    public Object updateStudentAccumulateNumber(Map<String, Integer> req) {
-        int n = studentList.size();
-        if ( n == 0 ) return new Response(false, "Please add one more student");
-        int studentId = req.get("studentId");
-        int accumulateNumber = req.get("accumulateNumber");
-        for (Student currStudent : studentList) {
-            if (currStudent.getStudentId() == studentId) {
-                currStudent.setAccumulateNumber(accumulateNumber);
-                return new Response(true, "Update accumulate number for " + studentId + " successfully");
             }
         }
         return new Response(false, "No student with id "+ studentId+ " in list");
