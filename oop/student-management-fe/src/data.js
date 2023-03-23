@@ -51,36 +51,6 @@ const getAllStudent = async () => {
         return []
     }
 }
-const getPrimary = async () => {
-    try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-primary', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return []
-    }
-}
-const getStudentFromFaculty = async (faculty) => {
-    try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-faculty?faculty='+faculty, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        });
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return []
-    }
-}
 const getStudentFromClass = async (classRoom) => {
     try {
         const response = await fetch('https://student-management-server.herokuapp.com/get-class?classRoom='+classRoom, {
@@ -111,7 +81,7 @@ const getStudentFromStudentId = async (studentId) => {
         return {status: false, info:"Something's wrong"};
     }
 }
-const getStudentLowTrainingPoint = async () => {
+const getStudentLowAvgPoint = async () => {
     try {
         const response = await fetch('https://student-management-server.herokuapp.com/get-low-point', {
             method: 'GET',
@@ -121,25 +91,6 @@ const getStudentLowTrainingPoint = async () => {
         });
         const data = await response.json();
         return data
-    } catch (error) {
-        console.error(error);
-        return {status: false, info:"Something's wrong"};
-    }
-}
-const updateFaculty = async (studentId, faculty) => {
-    try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-faculty', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({studentId, newValue: faculty})
-        });
-        const data = await response.json();
-        if (typeof data.status === 'number') {
-            return {status: false, info: "Something's wrong"};
-        }
-        return data;
     } catch (error) {
         console.error(error);
         return {status: false, info:"Something's wrong"};
@@ -183,52 +134,14 @@ const updateAddress = async (studentId, address) => {
         return {status: false, info:"Something's wrong"};
     }
 }
-const updateAccumulate = async (studentId, accumulateNumber) => {
+const updateAvgPoint = async (studentId, avgPoint) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-accumulate', {
+        const response = await fetch('https://student-management-server.herokuapp.com/update-point', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({studentId, accumulateNumber})
-        });
-        const data = await response.json();
-        if (typeof data.status === 'number') {
-            return {status: false, info: "Something's wrong"};
-        }
-        return data;
-    } catch (error) {
-        console.error(error);
-        return {status: false, info:"Something's wrong"};
-    }
-}
-const updateTrainingPoint = async (studentId, trainingPoint) => {
-    try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-training-point', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(studentId, trainingPoint)
-        });
-        const data = await response.json();
-        if (typeof data.status === 'number') {
-            return {status: false, info: "Something's wrong"};
-        }
-        return data;
-    } catch (error) {
-        console.error(error);
-        return {status: false, info:"Something's wrong"};
-    }
-}
-const updatePrimary = async (studentId) => {
-    try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-primary', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(studentId)
+            body: JSON.stringify(studentId, avgPoint)
         });
         const data = await response.json();
         if (typeof data.status === 'number') {
@@ -269,16 +182,11 @@ export {
     createStudent,
     deleteStudent,
     getAllStudent,
-    getPrimary,
     getStudentFromClass,
-    getStudentFromFaculty,
     getStudentFromStudentId,
-    getStudentLowTrainingPoint,
-    updateAccumulate,
+    getStudentLowAvgPoint,
     updateAddress,
-    updateFaculty,
     updateClass,
     updateNumber,
-    updatePrimary,
-    updateTrainingPoint
+    updateAvgPoint
 };
