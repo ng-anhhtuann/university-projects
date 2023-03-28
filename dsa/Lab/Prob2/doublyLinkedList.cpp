@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 struct Node {
     int data;
     Node *prev;
@@ -94,17 +93,8 @@ void mergeSort(Node **head) {
     mergeSort(&right);
     merge(head, temp, right);
 }
-void addNodeAtBeginning(Node** head_ref, int new_data) {
-    Node* new_node = new Node;
-    new_node->data = new_data;
-    new_node->prev = NULL;
-    new_node->next = *head_ref;
-    if (*head_ref != NULL) {
-        (*head_ref)->prev = new_node;
-    }
-    *head_ref = new_node;
-}
-void insertNode(Node** head_ref, int new_data) {
+
+void insertNodeAtHead(Node** head_ref, int new_data) {
     Node* new_node = new Node;
     new_node->data = new_data;
     new_node->next = (*head_ref);
@@ -126,15 +116,13 @@ void log(Node* head) {
 
 int main() {
     Node* head = NULL;
-    insertNode(&head, 1);
-    insertNode(&head, 3);
-    insertNode(&head, 9);
-    insertNode(&head, 5);
-    insertNode(&head, 7);
-    insertNode(&head, 8);
+    insertNodeAtHead(&head, 1);
+    insertNodeAtHead(&head, 3);
+    insertNodeAtHead(&head, 9);
+    insertNodeAtHead(&head, 5);
+    insertNodeAtHead(&head, 7);
+    insertNodeAtHead(&head, 8);
 
-    log(head);
-    shakerSort(&head);
     log(head);
     return 0;
 }
