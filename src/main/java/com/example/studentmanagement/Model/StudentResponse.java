@@ -19,7 +19,8 @@ public class StudentResponse {
     public StudentResponse getStudentResponseByType(String type) {
         switch (type) {
             case Utilities.DEFAULT: {
-                return new StudentResponse(false, new Student((long) -1,"","",(long) -1, (double) -1, "", "", ""));
+                return new StudentResponse(false,
+                    new Student((long) -1,"","",(long) -1, (double) -1, "", "", ""));
             }
             default: {
                 return new StudentResponse();
@@ -78,3 +79,4 @@ public class StudentResponse {
     }
 
 }
+

@@ -89,7 +89,7 @@ public class StudentRepository implements IStudent{
     public Object getStudentsLowPoint() {
         List<Student> res = new ArrayList<>();
         for (Student student : studentList) {
-            if (student.getAvgPoint() >= 0 || student.getAvgPoint() <= 5.0) res.add(student);
+            if (student.getAvgPoint() >= 0 && student.getAvgPoint() <= 5) res.add(student);
         }
         return res;
     }
