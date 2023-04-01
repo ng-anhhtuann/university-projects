@@ -55,6 +55,25 @@ void changeDataAtIndex(Node** head, int idx, int data){
     tmp->data = data;
 }
 
+int sizeOfNode(Node** head){
+    int res = 0;
+    Node* tmp = *head;
+    while (tmp != NULL){
+        res++;
+        tmp=tmp->next;
+    }
+    return res;
+}
+
+void log(Node* head) {
+    Node* current = head;
+    while (current != NULL) {
+        cout << current->data << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
+
 void merge(Node** head, int l, int m, int r) {
     int i, j, k;
     int n1 = m - l + 1;
@@ -91,25 +110,6 @@ void mergeSort(Node** head, int n) {
             merge(head, j, m, re);
         }
     }
-}
-
-int sizeOfNode(Node** head){
-    int res = 0;
-    Node* tmp = *head;
-    while (tmp != NULL){
-        res++;
-        tmp=tmp->next;
-    }
-    return res;
-}
-
-void log(Node* head) {
-    Node* current = head;
-    while (current != NULL) {
-        cout << current->data << " ";
-        current = current->next;
-    }
-    cout << endl;
 }
 
 int main() {
