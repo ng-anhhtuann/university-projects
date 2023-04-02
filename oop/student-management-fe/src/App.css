@@ -1,6 +1,14 @@
 .App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  flex-direction: column;
+  padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  background: linear-gradient(to bottom right, #cff0ff, #f4ffd4);
 }
 .formContainer {
   width: 310px;
@@ -10,9 +18,9 @@
   border-radius: 4px;
   padding: 5px;
   margin-left: 10px;
+  background: linear-gradient(to bottom right, #f9efff, #d4ffea);
 }
 .buttonContainer {
-  /* display: flex; */
   justify-content: center;
 }
 .titleWrap {
@@ -22,10 +30,33 @@
   background-color: #11ab1b;
   border: none;
   color: white;
-  padding: 4px 8px;
+  padding: 4px 6px;
   text-align: center;
   text-decoration: none;
-  height: 26px;
+  min-height: 26px;
+  max-height: 35px;
+  display: inline-block;
+  flex-wrap: wrap;
+  font-size: 2px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.Button:hover {
+  background-color: white;
+  color: #11ab1b;
+  border: 2px solid #eeff71;
+}
+.ButtonClicked {
+  background-color: #11ab1b70;
+  border: none;
+  color: white;
+  padding: 4px 6px;
+  min-height: 26px;
+  max-height: 35px;
+  text-align: center;
+  text-decoration: none;
   display: inline-block;
   font-size: 2px;
   margin: 4px 2px;
@@ -53,6 +84,7 @@
   padding: 5px;
   border-radius: 4px;
   margin-left: 10px;
+  background: linear-gradient(to bottom right, #f9eeff, #d4ffea);
 }
 .Input {
   border-radius: 4px;
@@ -71,21 +103,6 @@
   background-color: black;
   border-radius: 8px;
 }
-.ButtonClicked {
-  background-color: #11ab1b70;
-  transition: background-color 0.3s;
-  border: none;
-  color: white;
-  padding: 4px 8px;
-  height: 26px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 2px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-}
 .ButtonTitle {
   font-weight: bold;
   text-transform: uppercase;
@@ -98,10 +115,17 @@
   pointer-events: none;
 }
 .student-table {
-  border: 1px solid black;
+  background: white;
   margin: 20px auto;
   max-height: 100px;
   text-align: center;
+  border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid black;
+  padding: 3px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
