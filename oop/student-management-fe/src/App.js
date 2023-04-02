@@ -225,20 +225,20 @@ function App() {
 
           <div className='inLine'>
             {deleteButton}
-            <IdForm title={"Student ID"} onChange={useCallback((event) => {setStudentIdDelete(event?.target?.value)},[]) } onSubmit={() => {deleteStudentById()} } hide={showDeleteForm} type={"number"} name={"studentId"} value={undefined}/>
+            <IdForm title={"Student ID"} onChange={useCallback((event) => {setStudentIdDelete(event?.target?.value)},[]) } onSubmit={() => {deleteStudentById()} } hide={showDeleteForm} type={"number"} name={"studentId"}/>
           </div>
         </div>
 
         <div className='mapContainer'>
           <div className='inLine'>
             {getClassButton}
-            <IdForm title={"Class Room"} onChange={(e) => setClassNameFind(e?.target?.value)} onSubmit={() => getStudentSameClass()} hide={showClassGet} type={"text"} name={"classRoom"} value={undefined}/>
+            <IdForm title={"Class Room"} onChange={(e) => setClassNameFind(e?.target?.value)} onSubmit={() => getStudentSameClass()} hide={showClassGet} type={"text"} name={"classRoom"}/>
           </div>
           <StudentListTable students={listStudentSameClass} hide={!showTableClass}/>
 
           <div className='inLine'>
             {getStudentByIdButton}
-            <IdForm title={"Student ID"} onChange={(e) => setStudentIdFind(e?.target?.value)} onSubmit={() => getStudentById()} hide={showStudentGet} type={"number"} name={"studentId"} value={undefined}/>     
+            <IdForm title={"Student ID"} onChange={(e) => setStudentIdFind(e?.target?.value)} onSubmit={() => getStudentById()} hide={showStudentGet} type={"number"} name={"studentId"}/>     
           </div>
           <StudentTable student={studentFind} hide={showStudentInfo}/>
 
@@ -250,22 +250,22 @@ function App() {
         <div className='mapContainer'>
           <div className='inLine'> 
             {updatePointButton}
-            <UpdateForm title={"New Point"} onChange={useCallback((e)=> {setNewPointUpdate(e?.target?.value)}, []) } onSubmit={() => updatePointByStudentId()} hide={showPointUpdate} type={"number"} name={"avgPoint"} value={undefined} onChangeId={useCallback((e) => {setStudentIdPointUpdate(e?.target?.value)}, [])}/>
+            <UpdateForm title={"New Point"} onChange={useCallback((e)=> {setNewPointUpdate(e?.target?.value)}, []) } onSubmit={() => updatePointByStudentId()} hide={showPointUpdate} type={"number"} name={"avgPoint"} onChangeId={useCallback((e) => {setStudentIdPointUpdate(e?.target?.value)}, [])}/>
           </div>
 
           <div className='inLine'>
             {updateNumberButton}
-            <UpdateForm title={"New Number"} onChange={useCallback((e) => {setNumberUpdate(e?.target?.value)},[])} onSubmit={() => updateNumberById()} hide={showNumberUpdate} type={"text"} name={"number"} value={undefined} onChangeId={useCallback((e) => setStudentIdNumberUpdate(e?.target?.value),[])}/>
+            <UpdateForm title={"New Number"} onChange={useCallback((e) => {setNumberUpdate(e?.target?.value)},[])} onSubmit={() => updateNumberById()} hide={showNumberUpdate} type={"text"} name={"number"} onChangeId={useCallback((e) => setStudentIdNumberUpdate(e?.target?.value),[])}/>
           </div>
           
           <div className='inLine'>
             {updateClassButton}
-            <UpdateForm title={"New Class"} onChange={useCallback((e) => {setClassUpdate(e?.target?.value)},[])} onSubmit={() => updateClassById()} hide={showClassUpdate} type={"text"} name={"classRoom"} value={undefined} onChangeId={useCallback((e) => setStudentIdClassUpdate(e?.target?.value),[])}/>
+            <UpdateForm title={"New Class"} onChange={useCallback((e) => {setClassUpdate(e?.target?.value)},[])} onSubmit={() => updateClassById()} hide={showClassUpdate} type={"text"} name={"classRoom"} onChangeId={useCallback((e) => setStudentIdClassUpdate(e?.target?.value),[])}/>
           </div>
           
           <div className='inLine'>
             {updateAddressButton}
-            <UpdateForm title={"New Address"} onChange={useCallback((e) => {setAddressUpdate(e?.target?.value)},[])} onSubmit={() => updateAddressById()} hide={showAddressUpdate} type={"text"} name={"address"} value={undefined} onChangeId={useCallback((e) => setStudentIdAddressUpdate(e?.target?.value),[])}/>
+            <UpdateForm title={"New Address"} onChange={useCallback((e) => {setAddressUpdate(e?.target?.value)},[])} onSubmit={() => updateAddressById()} hide={showAddressUpdate} type={"text"} name={"address"} onChangeId={useCallback((e) => setStudentIdAddressUpdate(e?.target?.value),[])}/>
           </div>
           
         </div>
