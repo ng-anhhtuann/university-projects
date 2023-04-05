@@ -1,3 +1,6 @@
+body {
+  background: linear-gradient(-45deg, #cff0ff, #f4ffd4);
+}
 .App {
   display: flex;
   align-items: center;
@@ -8,7 +11,6 @@
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  background: linear-gradient(to bottom right, #cff0ff, #f4ffd4);
 }
 .formContainer {
   width: 310px;
