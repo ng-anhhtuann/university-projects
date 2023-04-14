@@ -10,7 +10,7 @@ import { createStudent, deleteStudent, getAllStudent, getStudentFromClass, getSt
 import StudentListTable from 'shared/StudentListTable';
 import StudentTable from 'shared/StudentTable';
 
-function App() {
+export default function App() {
   const [listStudentShow, setListStudentShow] = useState(false);
   const [listStudent, setListStudent] = useState([]);
   const getAll = async () => {
@@ -274,5 +274,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
