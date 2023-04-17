@@ -68,7 +68,7 @@ void traverse(Node* root){
 }
 
 bool isNumber(string& s) {
-    regex e("^-?[0-9]+$");
+    regex e("^-?[0-9]+(.[0-9]+)?$");
     return regex_match(s, e);
 }
 
