@@ -2,12 +2,16 @@ package com.example.studentmanagement.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+import lombok.*;
 /**
  * Encapsulation with datafields and getters/setters
  * Polymorphism with initialize objects by constructor
  * Inheritance from Person
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student extends Person {
     @SerializedName("studentId")
     @Expose
@@ -24,13 +28,6 @@ public class Student extends Person {
     @SerializedName("address")
     @Expose
     private String address;
-
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public Student() {
-    }
 
     /**
      *
