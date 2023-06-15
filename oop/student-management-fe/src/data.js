@@ -1,6 +1,7 @@
+const api = 'https://student-management-server.azurewebsites.net/';
 const createStudent = async (student) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/create', {
+        const response = await fetch(api.concat('create'), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,7 +20,7 @@ const createStudent = async (student) => {
 }
 const deleteStudent = async (studentId) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/delete-by-id', {
+        const response = await fetch(api.concat('delete-by-id'), {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +39,7 @@ const deleteStudent = async (studentId) => {
 }
 const getAllStudent = async () => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-all', {
+        const response = await fetch(api.concat('get-all'), {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,7 +54,7 @@ const getAllStudent = async () => {
 }
 const getStudentFromClass = async (classRoom) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-class?classRoom='+classRoom, {
+        const response = await fetch(api.concat('get-class?classRoom=')+classRoom, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,7 +69,7 @@ const getStudentFromClass = async (classRoom) => {
 }
 const getStudentFromStudentId = async (studentId) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-student-id?studentId='+studentId, {
+        const response = await fetch(api.concat('get-student-id?studentId=')+studentId, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -83,7 +84,7 @@ const getStudentFromStudentId = async (studentId) => {
 }
 const getStudentLowAvgPoint = async () => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/get-low-point', {
+        const response = await fetch(api.concat('get-low-point'), {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -98,7 +99,7 @@ const getStudentLowAvgPoint = async () => {
 }
 const updateClass = async (studentId, classRoom) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-class', {
+        const response = await fetch(api.concat('update-class'), {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -117,7 +118,7 @@ const updateClass = async (studentId, classRoom) => {
 }
 const updateAddress = async (studentId, address) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-address', {
+        const response = await fetch(api.concat('update-address'), {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -136,7 +137,7 @@ const updateAddress = async (studentId, address) => {
 }
 const updateAvgPoint = async (studentId, avgPoint) => {
     try {
-        const response = await fetch('https://student-management-server.herokuapp.com/update-point', {
+        const response = await fetch(api.concat('update-point'), {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -160,7 +161,7 @@ const updateNumber = async (studentId, number) => {
             newValue: number
         };
 
-        const response = await fetch('https://student-management-server.herokuapp.com/update-number', {
+        const response = await fetch(api.concat('update-number'), {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
