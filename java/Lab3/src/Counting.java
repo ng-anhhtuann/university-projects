@@ -42,17 +42,17 @@ public class Counting {
                     System.out.println("Không phải là số. Vui lòng nhập lại: ");
                     scanner.next();
                 }
-//            } catch (Exception e) {
-//				System.out.println("Exception happen");
-//				return;
-//			}
-            } catch (NumberFormatException e) {
-                System.out.println("NumberFormatException");
-                return;
-            } catch (NegativeArraySizeException e) {
-                System.out.println("NegativeArraySizeException");
-                return;
-            }
+            } catch (Exception e) {
+				System.out.println("Exception happen");
+				return;
+			}
+//            } catch (NumberFormatException e) {
+//                System.out.println("NumberFormatException");
+//                return;
+//            } catch (NegativeArraySizeException e) {
+//                System.out.println("NegativeArraySizeException");
+//                return;
+//            }
         }
 
         int[] a = new int[n];
