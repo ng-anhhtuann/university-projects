@@ -1,3 +1,4 @@
+package Resize;
 
 public interface GeometricObject {
 	public double getPerimeter();

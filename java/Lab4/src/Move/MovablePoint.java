@@ -1,3 +1,5 @@
+package Move;
+
 public class MovablePoint implements Movable {
 	int x;
 	int y;
@@ -13,7 +15,7 @@ public class MovablePoint implements Movable {
 
 	@Override
 	public String toString() {
-		return "MovablePoint{" + "x=" + x + ", y=" + y + ", xSpeed=" + xSpeed + ", ySpeed=" + ySpeed + '}';
+		return "MovablePoint{" + " x = " + x + ", y = " + y + ", xSpeed = " + xSpeed + ", ySpeed = " + ySpeed + '}';
 	}
 
 	@Override

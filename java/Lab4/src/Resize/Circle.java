@@ -1,3 +1,4 @@
+package Resize;
 
 public class Circle implements GeometricObject{
 	double radius = 1.0;

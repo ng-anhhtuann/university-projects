@@ -1,3 +1,5 @@
+package Move;
+
 
 public class MovableCircle implements Movable {
 	private int radius;
@@ -29,7 +31,7 @@ public class MovableCircle implements Movable {
 	// toString method for representing object state
 	@Override
 	public String toString() {
-		return "MovableCircle{" + "radius=" + radius + ", center=" + center + '}';
+		return "MovableCircle{" + " radius = " + radius + ", center = " + center + '}';
 	}
 
 	@Override
