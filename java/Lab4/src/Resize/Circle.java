@@ -1,9 +1,9 @@
 package Resize;
 
-public class Circle implements GeometricObject{
+public class Circle implements GeometricObject {
 	double radius = 1.0;
-	
-	public Circle( double radius ) {
+
+	public Circle(double radius) {
 		this.radius = radius;
 	}
 
@@ -16,5 +16,5 @@ public class Circle implements GeometricObject{
 	public double getArea() {
 		return radius * radius * 3.14;
 	}
-	
+
 }

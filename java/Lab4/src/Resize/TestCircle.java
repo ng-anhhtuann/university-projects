@@ -11,9 +11,9 @@ public class TestCircle {
 		System.out.println("\nResizableCircle - Radius before resizing: " + resizableCircle.radius);
 		System.out.println("ResizableCircle - Perimeter: " + resizableCircle.getPerimeter());
 		System.out.println("ResizableCircle - Area: " + resizableCircle.getArea());
-		
+
 		System.out.println();
-		
+
 		int resizePercent = 50;
 		double resizedRadius = resizableCircle.resize(resizePercent);
 		resizableCircle = new ResizeableCircle(resizedRadius);
