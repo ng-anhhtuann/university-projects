@@ -1,9 +1,10 @@
 # University Projects
 
-This repository is to store all projects in university subjects:
-- Object Oriented Programming
-- Data Structure and Algorithms
-- Database Priciple
+This repository is dedicated to housing coding projects from my university coursework. Here, you'll find projects related to:
+
+- Object-Oriented Programming
+- Data Structures and Algorithms
+- Database Principles
 - Java Programming
 
 ### PR or Issues are welcomed! 
