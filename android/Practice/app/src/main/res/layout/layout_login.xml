@@ -99,7 +99,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="@string/login" />
-        
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cirSignupButton"
             style="@style/loginButton"
