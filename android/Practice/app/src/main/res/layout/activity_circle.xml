@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@drawable/gradient"
     android:gravity="center"
-    android:layout_gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/r1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/r1"
         android:weightSum="3">
 
         <LinearLayout
@@ -61,8 +61,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingRight="30dp"
-            android:paddingTop="30dp">
+            android:paddingTop="30dp"
+            android:paddingRight="30dp">
 
             <ImageView
                 android:layout_width="70dp"
@@ -85,11 +85,11 @@
         android:weightSum="3">
 
         <LinearLayout
+            android:id="@+id/r2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:id="@+id/r2"
             android:orientation="vertical"
             android:paddingTop="30dp">
 
@@ -114,19 +114,19 @@
             android:padding="30dp">
 
             <ImageView
+                android:id="@+id/middle"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/middle"
                 android:src="@mipmap/noti" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/r3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:id="@+id/r3"
             android:orientation="vertical"
             android:paddingTop="30dp">
 
@@ -145,10 +145,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/r4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/r4"
         android:weightSum="3">
 
         <LinearLayout
