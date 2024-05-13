@@ -9,8 +9,9 @@
     <color name="primaryTextColor">#00a5ff</color>
     <color name="loginBkColor">#f0f0f0</color>
     <color name="black">#000000</color>
-
+    <color name="headerTextPrimary">#00a5ff</color>
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
+    <color name="green">#4CAF50</color>
 
 </resources>

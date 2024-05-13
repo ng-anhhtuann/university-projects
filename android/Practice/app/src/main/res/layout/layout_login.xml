@@ -9,8 +9,14 @@
         style="@style/linearParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary"
         android:padding="@dimen/loginViewsMargin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exit_lab3"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
         <ImageView
             android:layout_width="134dp"
@@ -20,28 +26,12 @@
             android:layout_marginBottom="50dp"
             android:src="@drawable/logo3_2" />
 
-        <!--        <TextView-->
-        <!--            style="@style/headerTextPrimary"-->
-        <!--            android:layout_marginTop="@dimen/loginViewsMargin"-->
-        <!--            android:text="@string/login" />-->
-
-        <!--        <com.google.android.material.textfield.TextInputLayout-->
-        <!--            android:id="@+id/textInputEmail"-->
-        <!--            style="@style/parent"-->
-        <!--            android:layout_marginTop="@dimen/loginViewsMargin">-->
-
         <EditText
             android:id="@+id/editTextEmail"
             style="@style/roundEditText"
             android:background="@drawable/rounded_edittext"
             android:hint="@string/login_email_hint"
             android:inputType="textEmailAddress" />
-        <!--        </com.google.android.material.textfield.TextInputLayout>-->
-
-        <!--        <android.support.design.widget.TextInputLayout-->
-        <!--            android:id="@+id/textInputPassword"-->
-        <!--            style="@style/parent"-->
-        <!--            android:layout_marginTop="@dimen/loginViewsMargin">-->
 
         <EditText
             android:id="@+id/editTextPassword"
@@ -49,7 +39,6 @@
             android:background="@drawable/rounded_edittext"
             android:hint="@string/login_password_hint"
             android:inputType="textPassword" />
-        <!--        </android.support.design.widget.TextInputLayout>-->
 
 
         <LinearLayout
@@ -109,13 +98,6 @@
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="@string/sign_up" />
 
-        <!--        <TextView-->
-        <!--            style="@style/parent"-->
-        <!--            android:layout_marginTop="@dimen/loginViewsMargin"-->
-        <!--            android:onClick="viewRegisterClicked"-->
-        <!--            android:text="@string/login_signup_hint"-->
-        <!--            android:textAlignment="center"-->
-        <!--            android:textColor="@color/primaryTextColor"-->
-        <!--            android:textStyle="bold" />-->
     </LinearLayout>
+
 </LinearLayout>

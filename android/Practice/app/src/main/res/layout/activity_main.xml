@@ -1,23 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:background="@drawable/gradient"
+    android:padding="30dp"
+    android:orientation="vertical">
 
-<!--    <Button-->
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
+        style="@style/directButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/button"
-        android:text="Login"
-        android:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/b1"
+        android:text="@string/lab_1_1"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b3_1"
+        android:text="@string/lab_3_1"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b3_2"
+        android:text="@string/lab_3_2"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b4_1"
+        android:text="@string/lab_4"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+    
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b4_2"
+        android:text="@string/lab_4_2"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b5_1"
+        android:text="@string/lab_5_1"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b5_2"
+        android:text="@string/lab_5_2"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b9"
+        android:text="@string/lab_9"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b10"
+        android:text="@string/lab_10"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b11"
+        android:text="@string/lab_11"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/directButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b12"
+        android:text="@string/lab_12"
+        android:layout_marginTop="@dimen/signup_text_margin_top"/>
+
+</LinearLayout>

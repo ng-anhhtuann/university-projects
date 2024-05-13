@@ -25,19 +25,23 @@ public class CircleActivity extends AppCompatActivity {
                 findViewById(R.id.r4)
         };
 
+        Runnable hide = new Runnable() {
+            @Override
+            public void run() {
+                for (LinearLayout layout : surroundingLayouts) {
+                    layout.setVisibility(View.VISIBLE);
+                }
+            }
+        };
+
         middleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (iconsVisible) {
-                    for (LinearLayout layout : surroundingLayouts) {
-                        layout.setVisibility(View.INVISIBLE);
-                    }
-                    iconsVisible = false;
-                } else {
-                    for (LinearLayout layout : surroundingLayouts) {
-                        layout.setVisibility(View.VISIBLE);
-                    }
-                    iconsVisible = true;
+                for (LinearLayout layout : surroundingLayouts) {
+                    layout.setVisibility(View.GONE);
+                }
+                for (LinearLayout layout : surroundingLayouts) {
+                    layout.postDelayed(hide, 3000);
                 }
             }
         });
