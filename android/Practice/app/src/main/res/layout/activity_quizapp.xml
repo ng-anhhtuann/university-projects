@@ -38,7 +38,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        app:justifyContent="space_between"
         android:showDividers="middle">
 
         <androidx.appcompat.widget.AppCompatButton
