@@ -22,20 +22,23 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".CircleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Lab1Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Lab31Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Lab32Activity"
-            android:exported="false" />
+        <activity android:name=".CircleActivity" />
+        <activity android:name=".Lab1Activity" />
+        <activity android:name=".Lab31Activity" />
+        <activity android:name=".Lab32Activity" />
         <activity android:name=".Lab42SubActivity" />
         <activity android:name=".Lab42Activity" />
+        <activity android:name=".Lab51Activity" />
+        <activity android:name=".Lab52Activity" />
+        <activity android:name=".Lab9ReceiveActivity" />
+        <activity android:name=".Lab9SenderActivity" />
+        <activity android:name=".Lab10ReceiveActivity" />
+        <activity android:name=".Lab10SenderActivity" />
+        <activity android:name=".Lab11ReceiveActivity" />
+        <activity android:name=".Lab11SenderActivity" />
+        <activity android:name=".Lab111Activity" />
+        <activity android:name=".Lab111ContextMenuActivity" />
+        <activity android:name=".Lab12Activity" />
 
     </application>
 

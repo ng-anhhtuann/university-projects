@@ -18,7 +18,7 @@ public class Lab31Activity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login3_1);
 
-        exit = findViewById(R.id.lab1);
+        exit = findViewById(R.id.exit);
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

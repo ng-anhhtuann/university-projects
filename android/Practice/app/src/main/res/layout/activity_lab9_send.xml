@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/send_text_id"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        style="@style/roundEditText"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Enter your name"
+        android:paddingStart="40dp"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/send_button_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        style="@style/loginButton"
+        android:text="Send"
+        android:layout_marginTop="50dp" />
+</LinearLayout>
