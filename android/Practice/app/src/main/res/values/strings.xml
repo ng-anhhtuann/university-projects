@@ -25,4 +25,6 @@
     <string name="lab_12">lab 12</string>
     <string name="lab_4_2">Lab 4.2</string>
     <string name="lab_11_1">lab 11.1</string>
+    <string name="take_quiz">Take Quiz</string>
+    <string name="quiz_app">QUIZ APP</string>
 </resources>

@@ -12,6 +12,6 @@ public class Lab9ReceiveActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lab9_receive);
         receiver_msg = findViewById(R.id.received_value_id);
         Intent intent = getIntent();
-        String str = intent.getStringExtra("message_key");
+        String str = intent.getStringExtra("message_key"); // key - value
         receiver_msg.setText(str);
     } }

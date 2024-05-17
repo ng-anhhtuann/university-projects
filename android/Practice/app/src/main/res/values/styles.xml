@@ -76,7 +76,7 @@
     </style>
 
     <style name="loginButton3_1" parent="viewParent">
-        <item name="android:background">@drawable/button</item>
+        <item name="android:background">@drawable/button_gradient</item>
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
     </style>

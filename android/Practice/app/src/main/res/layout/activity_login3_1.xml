@@ -33,9 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="30dp"
+                android:layout_margin="20dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -54,7 +52,7 @@
                 android:layout_alignParentTop="true"
                 android:id="@+id/exit"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="60dp"
                 android:src="@android:drawable/ic_menu_close_clear_cancel" />
         </RelativeLayout>
     </ScrollView>

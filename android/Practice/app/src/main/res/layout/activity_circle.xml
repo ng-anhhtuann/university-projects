@@ -82,14 +82,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         android:weightSum="3">
 
         <LinearLayout
             android:id="@+id/r2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:paddingTop="30dp">
 
@@ -111,22 +113,23 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp">
 
             <ImageView
                 android:id="@+id/middle"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/noti" />
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/r3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:paddingTop="30dp">
 
@@ -143,6 +146,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/r4"

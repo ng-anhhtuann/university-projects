@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/loginCard"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,13 +8,13 @@
         style="@style/linearParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:padding="@dimen/loginViewsMargin">
 
         <ImageView
+            android:id="@+id/exit_lab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/exit_lab3"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
         <ImageView
@@ -28,17 +27,31 @@
 
         <EditText
             android:id="@+id/editTextEmail"
-            style="@style/roundEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_edittext"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="10dp"
             android:hint="@string/login_email_hint"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
+        <!-- Password EditText with Icon -->
         <EditText
             android:id="@+id/editTextPassword"
-            style="@style/roundEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="10dp"
             android:hint="@string/login_password_hint"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
 
         <LinearLayout
@@ -48,54 +61,69 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="10dp" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:checked="true" />
 
                 <TextView
                     style="@style/viewParent"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="10dp"
                     android:text="@string/remember_me"
                     android:textColor="@color/loginBkColor"
                     android:textSize="@dimen/newsMoreTextSize" />
 
             </LinearLayout>
 
-            <TextView
-                style="@style/viewParent"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:onClick="viewForgotPAssword"
-                android:text="@string/forgot_password"
-                android:textColor="@color/loginBkColor"
-                android:textSize="@dimen/newsMoreTextSize" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@drawable/ic_unlock" />
+
+                <TextView
+                    style="@style/viewParent"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/loginBkColor"
+                    android:textSize="@dimen/newsMoreTextSize" />
+            </LinearLayout>
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cirLoginButton"
-            style="@style/loginButton"
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="@string/login" />
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button3_2"
+            android:text="@string/login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/newsMoreTextSize"
+            android:textStyle="bold"
+            app:cornerRadius="30dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cirSignupButton"
-            style="@style/loginButton"
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button3_2_reg"
+            android:textColor="@color/whiteTextColor"
+            android:textSize="@dimen/newsMoreTextSize"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
             android:text="@string/sign_up" />
 
     </LinearLayout>
