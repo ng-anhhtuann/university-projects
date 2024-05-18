@@ -1,0 +1,16 @@
+<resources>
+    <string-array name="shirt_sizes">
+        <item>XL</item>
+        <item>XM</item>
+        <item>M</item>
+        <item>L</item>
+    </string-array>
+
+    <string-array name="shirt_colors">
+        <item>White</item>
+        <item>Pink</item>
+        <item>Yellow</item>
+        <item>Red</item>
+        <item>Blue</item>
+    </string-array>
+</resources>
