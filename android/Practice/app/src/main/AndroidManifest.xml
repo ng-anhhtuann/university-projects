@@ -39,6 +39,8 @@
         <activity android:name=".Lab111Activity" />
         <activity android:name=".Lab111ContextMenuActivity" />
         <activity android:name=".Lab12Activity" />
+        <activity android:name=".ExamReceiveActivity"></activity>
+
 
     </application>
 
